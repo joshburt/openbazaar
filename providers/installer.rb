@@ -40,6 +40,22 @@ end
 # Applies our primary configuration to the instance
 ###############################################################################
 action :configure do
+
+  directory ob_server_ssl_dir do
+    action :create
+  end
+
+  ###############################################################################
+  # Create our self signed cert for encrypted client connections
+  ###############################################################################
+  openssl_x509 "#{ob_server_ssl_dir}/ob_server_cert.pem" do
+    common_name 'www.f00bar.com'
+    org 'Foo Bar'
+    org_unit 'Lab'
+    country 'US'
+  end
+
+
   ###############################################################################
   # Applies our ob.cfg template
   ###############################################################################
@@ -59,8 +75,8 @@ action :configure do
         LIBBITCOIN_SERVERS_TESTNET_testnet_server4: ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4'],
 
         AUTHENTICATION_SSL: ob_config['server']['config']['AUTHENTICATION']['SSL'],
-        AUTHENTICATION_SSL_CERT: ob_secrets['server']['config']['AUTHENTICATION']['SSL_CERT'],
-        AUTHENTICATION_SSL_KEY: ob_secrets['server']['config']['AUTHENTICATION']['SSL_KEY'],
+        AUTHENTICATION_SSL_CERT: "#{ob_server_ssl_dir}/ob_server_cert.pem",
+        AUTHENTICATION_SSL_KEY: "#{ob_server_ssl_dir}/ob_server_cert.key",
         AUTHENTICATION_USERNAME: ob_secrets['server']['config']['AUTHENTICATION']['USERNAME'],
         AUTHENTICATION_PASSWORD: ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD'],
 

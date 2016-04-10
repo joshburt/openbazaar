@@ -75,13 +75,25 @@ module OpenBazaar
 
   end
   module ConfigHelper
-    def ob_cfg_path
+    def ob_base_dir
       case node['platform_family']
         when 'debian'
-          '/usr/share/openbazaar/resources/OpenBazaar-Server/ob.cfg'
+          '/usr/share/openbazaar'
         else
           log 'the installer does not currently support this os. good luck!'
       end
+    end
+
+    def ob_server_base_dir
+      "#{ob_base_dir}/resources/OpenBazaar-Server"
+    end
+
+    def ob_server_ssl_dir
+      "#{ob_server_base_dir}/ssl"
+    end
+
+    def ob_cfg_path
+      "#{ob_server_base_dir}/ob.cfg"
     end
 
     def ob_config
