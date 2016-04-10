@@ -13,8 +13,6 @@ include_recipe 'openbazaar'
 ## Create service account
 ###############################################################################
 user 'openbazaar' do
-  #comment 'openbazaar daemon'
-  #system true
   manage_home true
   system true
   home '/home/openbazaar'
