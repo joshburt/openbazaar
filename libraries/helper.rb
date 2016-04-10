@@ -5,7 +5,7 @@
 ###############################################################################
 
 module OpenBazaar
-  module Helper
+  module ArtifactHelper
     def artifact_cache_path
       ::File.join(Chef::Config['file_cache_path'], artifact_name)
     end
@@ -66,6 +66,30 @@ module OpenBazaar
     end
 
     def get_ob_data
+      begin
+        data_bag_item(node.chef_environment, 'ob')
+      rescue Net::HTTPServerException
+        nil
+      end
+    end
+
+  end
+  module ConfigHelper
+    def ob_cfg_path
+      case node['platform_family']
+        when 'debian'
+          '/usr/share/openbazaar/resources/OpenBazaar-Server/ob.cfg'
+        else
+          log 'the installer does not currently support this os. good luck!'
+      end
+    end
+
+    def ob_config
+      @ob_config ||= load_ob_config
+    end
+
+    private
+    def load_ob_config
       begin
         data_bag_item(node.chef_environment, 'ob')
       rescue Net::HTTPServerException

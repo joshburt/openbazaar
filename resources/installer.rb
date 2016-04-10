@@ -4,5 +4,6 @@
 # Copyright 2016, Joshua C. Burt
 ###############################################################################
 
-actions :run
-default_action :run
+actions :download, :install, :configure
+default_action :download
+
