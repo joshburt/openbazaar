@@ -4,6 +4,13 @@
 # Copyright 2016, Joshua C. Burt
 ###############################################################################
 
+
+###############################################################################
+# ensure chef-sugar is in the run list, explicitly calling it out here
+# allows the consumer to NOT need to include it in the runlist (roles, etc)
+###############################################################################
+include_recipe 'chef-sugar'
+
 ###############################################################################
 # Ensure git is installed..
 ###############################################################################
@@ -14,7 +21,7 @@ include_recipe 'git'
 ###############################################################################
 openbazaar_installer 'download' do
   action :download
-  notifies :install, 'openbazaar_installer[install]'
+  notifies :install, 'openbazaar_installer[install]', :immediately
 end
 
 ###############################################################################

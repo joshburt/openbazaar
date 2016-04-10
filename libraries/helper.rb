@@ -88,6 +88,10 @@ module OpenBazaar
       @ob_config ||= load_ob_config
     end
 
+    def ob_secrets
+      @ob_secrets ||= load_ob_secrets
+    end
+
     private
     def load_ob_config
       begin
@@ -97,5 +101,15 @@ module OpenBazaar
       end
     end
 
+    def load_ob_secrets
+      encrypted_data_bag_item(node.chef_environment, 'ob_secrets')
+=begin
+      begin
+        encrypted_data_bag_item(node.chef_environment, 'ob_secrets')
+      rescue
+        nil
+      end
+=end
+    end
   end
 end
