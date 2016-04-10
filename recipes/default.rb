@@ -7,8 +7,6 @@
 # Dependency injection ..
 Chef::Recipe.send(:include, OpenBazaar::Helper)
 Chef::Resource::RemoteFile.send(:include, OpenBazaar::Helper)
-Chef::Resource::Package.send(:include, OpenBazaar::Helper)
-
 
 ###############################################################################
 # Ensure git is installed..
@@ -25,12 +23,12 @@ remote_file artifact_cache_path do
   retries 10
   retry_delay 5
   action :create
-  notifies :install, "dpkg_package[#{artifact_name}]"
+  notifies :run, "openbazaar_installer[#{artifact_name}]"
 end
 
 ###############################################################################
 # install/upgrade from the artifact
 ###############################################################################
-dpkg_package artifact_name do
-  source artifact_cache_path
+openbazaar_installer artifact_name do
 end
+
