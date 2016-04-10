@@ -47,6 +47,7 @@ action :configure do
 
   ###############################################################################
   # Create our self signed cert for encrypted client connections
+  # https://github.com/chef-cookbooks/openssl
   ###############################################################################
   openssl_x509 "#{ob_server_ssl_dir}/ob_server_cert.pem" do
     common_name 'www.f00bar.com'
