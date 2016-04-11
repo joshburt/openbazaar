@@ -17,7 +17,7 @@ include_recipe 'chef-sugar'
 include_recipe 'git'
 
 ###############################################################################
-# Download the offical installer
+# Download the official installer, or source and dependencies as commanded
 ###############################################################################
 openbazaar_installer 'download' do
   action :download
@@ -25,7 +25,7 @@ openbazaar_installer 'download' do
 end
 
 ###############################################################################
-# install/upgrade from the artifact
+# install/upgrade from the binary artifact
 ###############################################################################
 openbazaar_installer 'install' do
   action :nothing
