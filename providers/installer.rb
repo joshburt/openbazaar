@@ -62,6 +62,7 @@ end
 action :configure do
 
   directory ob_server_ssl_dir do
+    recursive true
     action :create
   end
 
