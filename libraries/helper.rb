@@ -11,7 +11,13 @@ module OpenBazaar
     end
 
     def artifact_name
-      "openbazaar_#{artifact_version}_amd64.deb"
+      case node['platform_family']
+        when 'debian'
+          "openbazaar_#{artifact_version}_amd64.deb"
+        else
+          log 'the installer does not currently support this os. good luck!'
+      end
+
     end
 
     def artifact_source_url
@@ -75,6 +81,11 @@ module OpenBazaar
 
   end
   module ConfigHelper
+
+    def deployment_type
+      ob_config['deployment_type']
+    end
+
     def ob_base_dir
       case node['platform_family']
         when 'debian'

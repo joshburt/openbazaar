@@ -9,6 +9,31 @@ use_inline_resources
 include OpenBazaar::ArtifactHelper
 include OpenBazaar::ConfigHelper
 
+action :download do
+
+  if deployment_type == 'binary'
+    ###############################################################################
+    # Download the official installer
+    ###############################################################################
+    remote_file artifact_cache_path do
+      source artifact_source_url
+      checksum artifact_checksum
+      backup false
+      retries 10
+      retry_delay 5
+      action :create
+    end
+  else
+    # else the source distribution..
+    git '' do
+      action :sync
+    end
+
+  end
+
+end
+
+
 action :install do
   case node['platform_family']
     when 'debian'
@@ -21,20 +46,6 @@ action :install do
   end
 end
 
-
-action :download do
-  ###############################################################################
-  # Download the offical installer
-  ###############################################################################
-  remote_file artifact_cache_path do
-    source artifact_source_url
-    checksum artifact_checksum
-    backup false
-    retries 10
-    retry_delay 5
-    action :create
-  end
-end
 
 ###############################################################################
 # Applies our primary configuration to the instance

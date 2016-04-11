@@ -7,10 +7,14 @@
 ###############################################################################
 # Sane defaults ..
 ###############################################################################
-default['ob']['version'] = '1.1.2'
-default['ob']['checksum'] = '535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'
-default['ob']['source'] = 'https://github.com/OpenBazaar/OpenBazaar-Installer/releases/download/'
+#default['ob']['deployment_type'] = 'binary'
 
+#default['ob']['version'] = '1.1.2'
+#default['ob']['checksum'] = '535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'
+#default['ob']['source'] = 'https://github.com/OpenBazaar/OpenBazaar-Installer/releases/download/'
+
+#default['ob']['server']['source'] = 'https://github.com/OpenBazaar/OpenBazaar-Server.git'
+#default['ob']['client']['source'] = 'https://github.com/OpenBazaar/OpenBazaar-Client.git'
 
 =begin
 ###############################################################################
