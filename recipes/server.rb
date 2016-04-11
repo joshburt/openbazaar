@@ -21,7 +21,7 @@ user 'openbazaar' do
 end
 
 ###############################################################################
-## create init.d wrapper
+## deploy upstart config
 ###############################################################################
 cookbook_file '/etc/init/openbazaard.conf' do
   source 'openbazaard.conf'
