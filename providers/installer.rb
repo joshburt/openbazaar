@@ -8,10 +8,20 @@ use_inline_resources
 
 include OpenBazaar::ArtifactHelper
 include OpenBazaar::ConfigHelper
+include OpenBazaar::SourceHelper
 
 action :download do
+  if deployment_type == 'source'
+    ###############################################################################
+    ## Download Dependencies and Source Code
+    ###############################################################################
 
-  if deployment_type == 'binary'
+    ## Download/Install dependencies
+    install_source_dependencies
+
+    ## Download client and server source
+    sync_source_code
+  else
     ###############################################################################
     # Download the official installer
     ###############################################################################
@@ -23,29 +33,28 @@ action :download do
       retry_delay 5
       action :create
     end
-  else
-    # else the source distribution..
-    git '' do
-      action :sync
-    end
-
   end
-
 end
 
-
+###############################################################################
+# Performs the installation
+###############################################################################
 action :install do
-  case node['platform_family']
-    when 'debian'
-      dpkg_package artifact_name do
-        source artifact_cache_path
-      end
-    else
-      log 'the installer does not currently support this os. good luck!'
-      log "cached installer may be found here #{artifact_cache_path}"
+  unless deployment_type == 'source'
+    ###############################################################################
+    # We don't perform anything if we are a source distribution
+    ###############################################################################
+    case node['platform_family']
+      when 'debian'
+        dpkg_package artifact_name do
+          source artifact_cache_path
+        end
+      else
+        log 'the installer does not currently support this os. good luck!'
+        log "cached installer may be found here #{artifact_cache_path}"
+    end
   end
 end
-
 
 ###############################################################################
 # Applies our primary configuration to the instance
@@ -66,7 +75,6 @@ action :configure do
     org_unit 'Lab'
     country 'US'
   end
-
 
   ###############################################################################
   # Applies our ob.cfg template
@@ -98,6 +106,4 @@ action :configure do
         TESTNET_SEEDS_testnet_seed1: ob_config['server']['config']['TESTNET_SEEDS']['testnet_seed1']
     )
   end
-
-
 end
