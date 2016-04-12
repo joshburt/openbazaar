@@ -64,6 +64,12 @@ module OpenBazaar
         repository ob_config['client']['source']
         action :sync
       end
+
+      ###############################################################################
+      # Install pip requirments for the server if need be
+      # (cd ./OpenBazaar-Server; pip install -r requirements.txt)
+      ###############################################################################
+      pip_requirements ::File.join(ob_server_base_dir, 'requirements.txt')
     end
   end
 end

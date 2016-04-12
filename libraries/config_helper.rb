@@ -37,12 +37,57 @@ module OpenBazaar
       ob_config['server']['ob_service_group']
     end
 
+    def ob_server_dht_port
+      ob_config['server']['config']['ports']['dht']
+    end
+
+    def ob_server_testnet_dht_port
+      ob_config['server']['config']['ports']['testnet_dht']
+    end
+
+    def ob_server_rest_port
+      ob_config['server']['config']['ports']['rest']
+    end
+
+    def ob_server_websocket_port
+      ob_config['server']['config']['ports']['websocket']
+    end
+
+    def ob_server_heartbeat_port
+      ob_config['server']['config']['ports']['heartbeat']
+    end
+
+    def ob_server_allowed_admin_ip
+      ob_config['server']['config']['allowed_admin_ip']
+    end
+
+    def ob_server_additional_flags
+      ob_config['server']['config']['additional_flags']
+    end
+
     def ob_client_base_dir
       if deployment_type == 'binary'
         "#{ob_base_dir}/resources/OpenBazaar-Client"
       else
         "#{ob_base_dir}/OpenBazaar-Client"
       end
+    end
+
+    def ob_server_daemon_exec_cmd
+      if deployment_type == 'binary'
+        server_exec = "#{ob_server_base_dir}/openbazaard"
+      else
+        server_exec = "python #{ob_server_base_dir}/openbazaard.py"
+      end
+    "#{server_exec}"\
+      ' start'\
+      ' --daemon'\
+      " -p #{ob_server_dht_port}"\
+      " -r #{ob_server_rest_port}"\
+      " -w #{ob_server_websocket_port}"\
+      " -b #{ob_server_heartbeat_port}"\
+      " -a #{ob_server_allowed_admin_ip}"\
+      " #{ob_server_additional_flags}"
     end
 
     def ob_server_ssl_dir
