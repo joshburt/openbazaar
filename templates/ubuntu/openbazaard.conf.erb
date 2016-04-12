@@ -1,16 +1,15 @@
 description "OpenBazaar Server Daemon"
 
-setuid openbazaar
-setgid openbazaar
-
-chdir /usr/share/openbazaar/resources/OpenBazaar-Server
+setuid <%= @user %>
+setgid <%= @group %>
 
 respawn
 
 start on runlevel [2345]
 stop on runlevel [06]
 
-exec /usr/share/openbazaar/resources/OpenBazaar-Server/openbazaard start --daemon
+chdir <%= @chdir %>
+exec <%= @exec %>
 
 #exec ./openbazaar/venv/bin/python \
 #  ./openbazaar/openbazaard.py start \

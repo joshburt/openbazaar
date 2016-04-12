@@ -29,6 +29,14 @@ module OpenBazaar
 
     end
 
+    def ob_service_account
+      ob_config['server']['ob_service_user']
+    end
+
+    def ob_service_group
+      ob_config['server']['ob_service_group']
+    end
+
     def ob_client_base_dir
       if deployment_type == 'binary'
         "#{ob_base_dir}/resources/OpenBazaar-Client"
