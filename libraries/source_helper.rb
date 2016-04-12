@@ -9,37 +9,45 @@ module OpenBazaar
     def install_source_dependencies
 
       ###############################################################################
-      ## PIP Managed Dependencies
+      ## Python Dependencies
       ###############################################################################
       python_runtime '2'
       python_package 'cryptography'
+      package %w(python-dev python-pip) do
+        action :install
+      end
 
       ###############################################################################
       ## Install Distro Managed / OS Level Packages
       ###############################################################################
       include_recipe 'build-essential'
+
       include_recipe 'openssl::upgrade'
+      package %w(libssl-dev) do
+        action :install
+      end
 
       apt_managed_package_list = %w(
-          libssl-dev
           libffi-dev
-          libzmq3-dev
           pkg-config
           libtool
-          python-dev
-          python-pip
       )
       package apt_managed_package_list do
         action :install
       end
 
       ###############################################################################
+      ## Special Handling For libzmq
+      ###############################################################################
+      include_recipe 'zeromq'
+      package %w(libzmq3-dev) do
+        action :install
+      end
+
+
+      ###############################################################################
       ## Special Handling For libsodium-dev
       ###############################################################################
-
-
-
-
 
     end
 
