@@ -7,28 +7,11 @@
 module OpenBazaar
   module SourceHelper
     def install_source_dependencies
-
       ###############################################################################
-      ## Python Dependencies
-      ###############################################################################
-      python_runtime '2'
-      python_package 'cryptography'
-      package %w(python-dev python-pip) do
-        action :install
-      end
-
-      ###############################################################################
-      ## Install Distro Managed / OS Level Packages
+      ## Generic Build Tools
       ###############################################################################
       include_recipe 'build-essential'
-
-      include_recipe 'openssl::upgrade'
-      package %w(libssl-dev) do
-        action :install
-      end
-
       apt_managed_package_list = %w(
-          libffi-dev
           pkg-config
           libtool
       )
@@ -37,22 +20,50 @@ module OpenBazaar
       end
 
       ###############################################################################
-      ## Special Handling For libzmq
+      ## OpenSSL
       ###############################################################################
-      include_recipe 'zeromq'
-      package %w(libzmq3-dev) do
+      include_recipe 'openssl::upgrade'
+      package %w(libssl-dev) do
         action :install
       end
-
 
       ###############################################################################
       ## Special Handling For libsodium-dev
       ###############################################################################
+      include_recipe 'libsodium'
+
+      ###############################################################################
+      ## Special Handling For libzmq
+      # requires libsodium
+      ###############################################################################
+      include_recipe 'zeromq'
+
+      ###############################################################################
+      ## Python Dependencies
+      ###############################################################################
+      python_runtime '2'
+      package %w(python-dev python-pip libffi-dev) do
+        action :install
+      end
+      python_package 'cryptography'
 
     end
 
     def sync_source_code
 
+      directory ob_base_dir do
+        recursive true
+      end
+
+      git ob_server_base_dir do
+        repository ob_config['server']['source']
+        action :sync
+      end
+
+      git ob_client_base_dir do
+        repository ob_config['client']['source']
+        action :sync
+      end
     end
   end
 end

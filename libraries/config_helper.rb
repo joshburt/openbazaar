@@ -21,7 +21,20 @@ module OpenBazaar
     end
 
     def ob_server_base_dir
-      "#{ob_base_dir}/resources/OpenBazaar-Server"
+      if ob_config['deployment_type'] == 'binary'
+        "#{ob_base_dir}/resources/OpenBazaar-Server"
+      else
+        "#{ob_base_dir}/OpenBazaar-Server"
+      end
+
+    end
+
+    def ob_client_base_dir
+      if deployment_type == 'binary'
+        "#{ob_base_dir}/resources/OpenBazaar-Client"
+      else
+        "#{ob_base_dir}/OpenBazaar-Client"
+      end
     end
 
     def ob_server_ssl_dir
