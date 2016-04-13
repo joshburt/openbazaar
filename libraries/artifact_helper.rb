@@ -24,8 +24,6 @@ module OpenBazaar
       "#{artifact_source_base}v#{artifact_version}/#{artifact_name}"
     end
 
-
-
     def artifact_version
       if ob_data.nil?
         node['ob']['version']
@@ -36,7 +34,6 @@ module OpenBazaar
           node['ob']['version']
         end
       end
-
     end
 
     def artifact_checksum

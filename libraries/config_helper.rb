@@ -74,6 +74,29 @@ module OpenBazaar
     end
 
     def ob_server_daemon_exec_cmd
+      ###############################################################################
+      # usage: python openbazaard.py start [<args>]
+      #
+      # Start the OpenBazaar server
+      #
+      # optional arguments:
+      # -h, --help            show this help message and exit
+      # -d, --daemon          run the server in the background as a daemon
+      # -t, --testnet         use the test network
+      # -l LOGLEVEL, --loglevel LOGLEVEL
+      #      set the logging level [debug, info, warning, error, critical]
+      # -p PORT, --port PORT
+      #      set the network port
+      # -a ALLOWIP, --allowip ALLOWIP
+      #      only allow api connections from this ip
+      # -r RESTAPIPORT, --restapiport RESTAPIPORT
+      #      set the rest api port
+      # -w WEBSOCKETPORT, --websocketport WEBSOCKETPORT
+      #      set the websocket api port
+      # -b HEARTBEATPORT, --heartbeatport HEARTBEATPORT
+      #      set the heartbeat port
+      # --pidfile PIDFILE     name of the pid file
+      ###############################################################################
       if deployment_type == 'binary'
         server_exec = "#{ob_server_base_dir}/openbazaard"
       else
@@ -82,11 +105,11 @@ module OpenBazaar
     "#{server_exec}"\
       ' start'\
       ' --daemon'\
-      " -p #{ob_server_dht_port}"\
-      " -r #{ob_server_rest_port}"\
-      " -w #{ob_server_websocket_port}"\
-      " -b #{ob_server_heartbeat_port}"\
-      " -a #{ob_server_allowed_admin_ip}"\
+      " --port #{ob_server_dht_port}"\
+      " --allowip #{ob_server_allowed_admin_ip}"\
+      " --restapiport #{ob_server_rest_port}"\
+      " --websocketport #{ob_server_websocket_port}"\
+      " --heartbeatport #{ob_server_heartbeat_port}"\
       " #{ob_server_additional_flags}"
     end
 

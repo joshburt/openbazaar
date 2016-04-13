@@ -11,12 +11,4 @@ stop on runlevel [06]
 chdir <%= @chdir %>
 exec <%= @exec %>
 
-#exec ./openbazaar/venv/bin/python \
-#  ./openbazaar/openbazaard.py start \
-#  -p {{ openbazaar_dht_port }} \
-#  -r {{ openbazaar_rest_port }} \
-#  -w {{ openbazaar_websocket_port }} \
-#  -b {{ openbazaar_heartbeat_port }} \
-#  -a {{ openbazaar_allowed_ip }} \
-#  {{ openbazaar_additional_flags }}
 

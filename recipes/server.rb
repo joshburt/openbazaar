@@ -4,10 +4,23 @@
 # Copyright 2016, Joshua C. Burt
 ###############################################################################
 
+# Dependency injection..
 ::Chef::Recipe.send(:include, OpenBazaar::ConfigHelper)
 ::Chef::Resource::User.send(:include, OpenBazaar::ConfigHelper)
 ::Chef::Resource::Template.send(:include, OpenBazaar::ConfigHelper)
 
+###############################################################################
+## Turn off OpenBazaar Server
+###############################################################################
+service 'openbazaard' do
+  case node['platform']
+    when 'ubuntu'
+      if node['platform_version'].to_f >= 9.10
+        provider Chef::Provider::Service::Upstart
+      end
+  end
+  action :stop
+end
 
 ###############################################################################
 # the environment needs to be sane
@@ -46,4 +59,17 @@ end
 ###############################################################################
 execute 'initctl reload-configuration' do
   action :nothing
+end
+
+###############################################################################
+## Turn on OpenBazaar Server
+###############################################################################
+service 'openbazaard' do
+  case node['platform']
+    when 'ubuntu'
+      if node['platform_version'].to_f >= 9.10
+        provider Chef::Provider::Service::Upstart
+      end
+  end
+  action :start
 end
