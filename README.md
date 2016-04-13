@@ -1,9 +1,7 @@
 openbazaar Cookbook
 ===================
-TODO: Enter the cookbook description here.
+Installs OpenBazaar https://openbazaar.org/
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
 
 Requirements
 ------------
