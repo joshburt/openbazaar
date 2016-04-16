@@ -13,8 +13,8 @@ module OpenBazaar
       # default value
       return_value = node['ob']['deployment_type']
       # Then we have some type of structure
-      unless ob_config.nil?
-        unless ob_config['deployment_type'].nil?
+      unless ob_config.nil? # protects against non-existant databag
+        unless ob_config['deployment_type'].nil? # protected against non-existant data bag items
           return_value = ob_config['deployment_type']
         end
       end
@@ -31,7 +31,7 @@ module OpenBazaar
     end
 
     def ob_server_base_dir
-      if ob_config['deployment_type'] == 'binary'
+      if deployment_type == 'binary'
         "#{ob_base_dir}/resources/OpenBazaar-Server"
       else
         "#{ob_base_dir}/OpenBazaar-Server"
@@ -87,9 +87,9 @@ module OpenBazaar
       # default value
       return_value = node['ob']['server']['config']['ports']['testnet_dht']
       # Then we have some type of structure
-      if ob_config
-        return_value = ob_config['server']['config']['ports']['testnet_dht']
-      end
+      #if ob_config
+      #  return_value = ob_config['server']['config']['ports']['testnet_dht']
+      #end
       return_value
     end
 
