@@ -70,6 +70,15 @@ module OpenBazaar
       # (cd ./OpenBazaar-Server; pip install -r requirements.txt)
       ###############################################################################
       pip_requirements ::File.join(ob_server_base_dir, 'requirements.txt')
+
+      ###############################################################################
+      ## Copy the 'seed' executable into the runtime location
+      ###############################################################################
+      remote_file ::File.join(ob_server_base_dir, 'httpseed.py') do
+        source "file://#{::File.join(ob_server_base_dir, 'seed', 'httpseed.py')}"
+        backup false
+        action :create
+      end
     end
   end
 end

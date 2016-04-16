@@ -65,6 +65,10 @@ module OpenBazaar
       ob_config['server']['config']['additional_flags']
     end
 
+    def ob_server_seed_port
+      ob_config['server']['config']['ports']['seed']
+    end
+
     def ob_client_base_dir
       if deployment_type == 'binary'
         "#{ob_base_dir}/resources/OpenBazaar-Client"
@@ -110,6 +114,37 @@ module OpenBazaar
       " --restapiport #{ob_server_rest_port}"\
       " --websocketport #{ob_server_websocket_port}"\
       " --heartbeatport #{ob_server_heartbeat_port}"\
+      " #{ob_server_additional_flags}"
+    end
+
+    def ob_seed_daemon_exec_cmd
+      # ( Seed daemon is only distributed in the source package )
+      ###############################################################################
+      #usage:
+      #    python httpseed.py <command> [<args>]
+      #    python httpseed.py <command> --help
+      #
+      #commands:
+      #    start            start the seed server
+      #    stop             shutdown the server and disconnect
+      #    restart          restart the server
+      ###############################################################################
+      #usage: usage:
+      #    python openbazaard.py start [-d DAEMON]
+      #
+      #Start the seed server
+      #
+      #optional arguments:
+      #    -h, --help            show this help message and exit
+      #    -d, --daemon          run the server in the background
+      #    -t, --testnet         use the test network
+      #    -p PORT, --port PORT  set the http port
+      ###############################################################################
+      server_exec = "python #{ob_server_base_dir}/httpseed.py"
+      "#{server_exec}"\
+      ' start'\
+      ' --daemon'\
+      " --port #{ob_server_seed_port}"\
       " #{ob_server_additional_flags}"
     end
 

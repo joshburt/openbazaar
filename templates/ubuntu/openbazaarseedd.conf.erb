@@ -1,0 +1,14 @@
+description "OpenBazaarSeed Server Daemon"
+
+setuid <%= @user %>
+setgid <%= @group %>
+
+respawn
+
+start on runlevel [2345]
+stop on runlevel [06]
+
+chdir <%= @chdir %>
+exec <%= @exec %>
+
+
