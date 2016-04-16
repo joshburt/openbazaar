@@ -42,6 +42,13 @@ module OpenBazaar
         action :install
       end
       python_package 'cryptography'
+
+
+      #########################################################################
+      # Client Dependency Processing
+      #########################################################################
+      # include_recipe 'nodejs'
+
     end
 
     def sync_source_code
@@ -49,15 +56,21 @@ module OpenBazaar
         recursive true
       end
 
+      #########################################################################
+      # Server Source Sync
+      #########################################################################
       git ob_server_base_dir do
         repository ob_config['server']['source']
         action :sync
       end
 
-      git ob_client_base_dir do
-        repository ob_config['client']['source']
-        action :sync
-      end
+      #########################################################################
+      # Client Source Sync
+      #########################################################################
+      # git ob_client_base_dir do
+      #   repository ob_config['client']['source']
+      #   action :sync
+      # end
 
       #########################################################################
       # Install pip requirments for the server if need be
@@ -73,6 +86,14 @@ module OpenBazaar
         backup false
         action :create
       end
+
+      #########################################################################
+      # Client Dependency Processing
+      #########################################################################
+      # nodejs_npm 'install client dependencies with npm' do
+      #   path ob_client_base_dir
+      #   action :install
+      # end
     end
   end
 end
