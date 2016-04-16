@@ -78,7 +78,7 @@ module OpenBazaar
     end
 
     def ob_server_daemon_exec_cmd
-      ###############################################################################
+      #########################################################################
       # usage: python openbazaard.py start [<args>]
       #
       # Start the OpenBazaar server
@@ -100,7 +100,7 @@ module OpenBazaar
       # -b HEARTBEATPORT, --heartbeatport HEARTBEATPORT
       #      set the heartbeat port
       # --pidfile PIDFILE     name of the pid file
-      ###############################################################################
+      #########################################################################
       if deployment_type == 'binary'
         server_exec = "#{ob_server_base_dir}/openbazaard"
       else
@@ -119,7 +119,7 @@ module OpenBazaar
 
     def ob_seed_daemon_exec_cmd
       # ( Seed daemon is only distributed in the source package )
-      ###############################################################################
+      #########################################################################
       #usage:
       #    python httpseed.py <command> [<args>]
       #    python httpseed.py <command> --help
@@ -128,7 +128,7 @@ module OpenBazaar
       #    start            start the seed server
       #    stop             shutdown the server and disconnect
       #    restart          restart the server
-      ###############################################################################
+      #########################################################################
       #usage: usage:
       #    python openbazaard.py start [-d DAEMON]
       #
@@ -139,7 +139,7 @@ module OpenBazaar
       #    -d, --daemon          run the server in the background
       #    -t, --testnet         use the test network
       #    -p PORT, --port PORT  set the http port
-      ###############################################################################
+      #########################################################################
       server_exec = "python #{ob_server_base_dir}/httpseed.py"
       "#{server_exec}"\
       ' start'\
