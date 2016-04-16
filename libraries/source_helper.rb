@@ -60,7 +60,7 @@ module OpenBazaar
       # Server Source Sync
       #########################################################################
       git ob_server_base_dir do
-        repository ob_config['server']['source']
+        repository ob_server_source
         action :sync
       end
 

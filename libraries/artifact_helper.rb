@@ -26,55 +26,50 @@ module OpenBazaar
 
     def artifact_version
       if ob_data.nil?
-        node['ob']['version']
+        return_value = node['ob']['version']
       else
         if ob_data['version'] != '' || ob_data['version'].nil?
-          ob_data['version']
+          return_value = ob_data['version']
         else
-          node['ob']['version']
+          return_value = node['ob']['version']
         end
       end
+      return_value
     end
 
     def artifact_checksum
       if ob_data.nil?
-        #ob_data['checksum'].nil? || ob_data['checksum'] == ''
-        node['ob']['checksum']
+        return_value = node['ob']['checksum']
       else
         if ob_data['checksum'] != '' || ob_data['checksum'].nil?
-          ob_data['checksum']
+          return_value = ob_data['checksum']
         else
-          node['ob']['checksum']
+          return_value = node['ob']['checksum']
         end
       end
+      return_value
     end
 
     def artifact_source_base
       if ob_data.nil?
-        #|| ob_data['source'].nil? || ob_data['source'] == ''
-        node['ob']['source']
+        return_value = node['ob']['source']
       else
         if ob_data['source'] != '' || ob_data['source'].nil?
-          ob_data['source']
+          return_value = ob_data['source']
         else
-          node['ob']['source']
+          return_value = node['ob']['source']
         end
       end
+      return_value
     end
 
     private
     def ob_data
-      # Chef::Log.info "@ob_data.nil? (#{@ob_data.nil?})"
       @ob_data ||= get_ob_data
     end
 
     def get_ob_data
-      begin
-        data_bag_item(node.chef_environment, 'ob')
-      rescue Net::HTTPServerException
-        nil
-      end
+      databag_exists?(node.chef_environment, 'ob') ? data_bag_item(node.chef_environment, 'ob') : nil
     end
-
   end
 end
