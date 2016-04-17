@@ -76,6 +76,7 @@ This includes autostarting with the system.
 
 Includes the default recipe.
 Example role:
+```json
 {
   "name": "ob_seed",
   "description": "OpenBazaar Seed Server",
@@ -87,6 +88,7 @@ Example role:
     "recipe[openbazaar::seed]"
   ]
 }
+```
 
 Contributing
 ------------
