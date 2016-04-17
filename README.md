@@ -143,6 +143,7 @@ Example:
   }
 }
 ```
+Failure to create this will cause the convergence to generate a random username/password combination everytime its run.
 
 
 e.g.
