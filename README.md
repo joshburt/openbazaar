@@ -129,7 +129,8 @@ Example
 In addition the the non-secure attributes noted so far there are several encrypted attributes that are required.
 
 The data bag item is configured to be `{CHEF ENVIRONMENT}\ob_secrets`
-Example:
+
+Example
 ```json
 {
   "id": "ob_secrets",
