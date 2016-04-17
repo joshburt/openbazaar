@@ -63,6 +63,7 @@ Additionally if one exists a data bag definition will take precedence over any a
 The data bag item is configured to be `{CHEF ENVIRONMENT}\ob`
 
 Example
+
 ```json
 {
   "name" : "data_bag_item_dev_ob_ob",
@@ -135,6 +136,7 @@ In addition the the non-secure attributes noted so far there are several encrypt
 The data bag item is configured to be `{CHEF ENVIRONMENT}\ob_secrets`
 
 Example
+
 ```json
 {
   "id": "ob_secrets",
@@ -148,6 +150,7 @@ Example
   }
 }
 ```
+
 Failure to create this will cause the convergence to generate a random username/password combination every time its run.
 
 Usage
@@ -171,6 +174,7 @@ Configures an OpenBazaar Server to run under a service account as a daemon.
 This includes autostarting with the system. Includes the default recipe.
 
 Example Role
+
 ```json
 {
   "name": "ob_server",
@@ -183,6 +187,7 @@ Example Role
     "recipe[openbazaar::server]"
   ]
 }
+
 ```
 
 #### openbazaar::seed
@@ -190,6 +195,7 @@ Configures an OpenBazaar Seed Server to run under a service account as a daemon.
 This includes autostarting with the system. Includes the default recipe.
 
 Example role
+
 ```json
 {
   "name": "ob_seed",
