@@ -53,10 +53,10 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 - `node['ob']['server']['config']['ports']['heartbeat'] = '18470'`
 - `node['ob']['server']['config']['ports']['seed'] = '8080'`
 
-Attributes may be over-ridden in the normal, node/role/environment level attribute `override_attributes`.
+Attributes may be over-ridden in the normal node/role/environment level attribute `override_attributes`.
 
-Additionally if one exists a databag definition will take presentence for any attribute declared.
-The databag is configured to be `{CHEF ENVIRONMENT}\ob`
+Additionally if one exists a databag definition will take precedence for any above attribute declaration.
+The data bag item is configured to be `{CHEF ENVIRONMENT}\ob`
 
 Example
 ```json
@@ -128,7 +128,7 @@ Example
 
 In addition the the non-secure attributes noted so far there are several encrypted attributes that are required.
 
-`{CHEF_ENVIRONMENT}\ob_secrets`
+The data bag item is configured to be `{CHEF ENVIRONMENT}\ob_secrets`
 Example:
 ```json
 {
@@ -143,25 +143,7 @@ Example:
   }
 }
 ```
-Failure to create this will cause the convergence to generate a random username/password combination everytime its run.
-
-
-e.g.
-#### openbazaar::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['openbazaar']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+Failure to create this will cause the convergence to generate a random username/password combination every time its run.
 
 Usage
 -----
