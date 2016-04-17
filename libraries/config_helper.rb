@@ -56,7 +56,7 @@ module OpenBazaar
       unless ob_config.nil?
         unless ob_config['server'].nil?
           unless ob_config['server']['ob_service_group'].nil?
-            return_value = ob_config['ob_service_group']
+            return_value = ob_config['server']['ob_service_group']
           end
         end
       end
