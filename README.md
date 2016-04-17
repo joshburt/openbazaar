@@ -2,14 +2,16 @@ openbazaar Cookbook
 ===================
 Installs OpenBazaar https://openbazaar.org/
 
-
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
 #### packages
-- `toaster` - openbazaar needs toaster to brown your bagel.
+- `git`
+- `openssl`
+- `chef-sugar`
+- `build-essential`
+- `poise-python`
+- `zeromq`
+- `libsodium`
 
 Attributes
 ----------
@@ -35,9 +37,8 @@ e.g.
 Usage
 -----
 #### openbazaar::default
-TODO: Write usage instructions for each cookbook.
+Installs and compiles OpenBazaar
 
-e.g.
 Just include `openbazaar` in your node's `run_list`:
 
 ```json
@@ -49,11 +50,46 @@ Just include `openbazaar` in your node's `run_list`:
 }
 ```
 
+#### openbazaar::server
+Configures an OpenBazaar Server to run under a service account as a daemon.
+This includes autostarting with the system.
+
+Includes the default recipe.
+Example role:
+```json
+{
+  "name": "ob_server",
+  "description": "OpenBazaar Server",
+  "json_class": "Chef::Role",
+  "default_attributes": { },
+  "override_attributes": { },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[openbazaar::server]"
+  ]
+}
+```
+
+#### openbazaar::seed
+Configures an OpenBazaar Seed Server to run under a service account as a daemon.
+This includes autostarting with the system.
+
+Includes the default recipe.
+Example role:
+{
+  "name": "ob_seed",
+  "description": "OpenBazaar Seed Server",
+  "json_class": "Chef::Role",
+  "default_attributes": { },
+  "override_attributes": { },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[openbazaar::seed]"
+  ]
+}
+
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
@@ -63,4 +99,24 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+MIT License
+
+Copyright (c) 2016 Joshua C. Burt
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
