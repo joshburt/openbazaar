@@ -1,6 +1,6 @@
 ###############################################################################
 # Cookbook Name:: openbazaar
-# OpenBazaar Module Definition
+# OpenBazaar ConfigHelper Module Definition
 # Copyright 2016, Joshua C. Burt
 ###############################################################################
 
