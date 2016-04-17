@@ -362,12 +362,44 @@ module OpenBazaar
       return_value
     end
 
-    def ob_server_authenication_ssl_cert
-      "#{ob_server_ssl_dir}/ob_server_cert.pem"
+    def ob_server_config_authenication_ssl_cert_name
+      return_value = node['ob']['server']['config']['AUTHENTICATION']['SSL_CERT']
+      unless ob_config.nil?
+        unless ob_config['server'].nil?
+          unless ob_config['server']['config'].nil?
+            unless ob_config['server']['config']['AUTHENTICATION'].nil?
+              unless ob_config['server']['config']['AUTHENTICATION']['SSL_CERT'].nil?
+                return_value = ob_config['server']['config']['AUTHENTICATION']['SSL_CERT']
+              end
+            end
+          end
+        end
+      end
+      return_value
     end
 
-    def ob_server_authenication_ssl_key
-      "#{ob_server_ssl_dir}/ob_server_cert.key"
+    def ob_server_config_authenication_ssl_key_name
+      return_value = node['ob']['server']['config']['AUTHENTICATION']['SSL_KEY']
+      unless ob_config.nil?
+        unless ob_config['server'].nil?
+          unless ob_config['server']['config'].nil?
+            unless ob_config['server']['config']['AUTHENTICATION'].nil?
+              unless ob_config['server']['config']['AUTHENTICATION']['SSL_KEY'].nil?
+                return_value = ob_config['server']['config']['AUTHENTICATION']['SSL_KEY']
+              end
+            end
+          end
+        end
+      end
+      return_value
+    end
+
+    def ob_server_config_authenication_ssl_cert
+      "#{ob_server_ssl_dir}/#{ob_server_config_authenication_ssl_cert_name}"
+    end
+
+    def ob_server_config_authenication_ssl_key
+      "#{ob_server_ssl_dir}/#{ob_server_config_authenication_ssl_key_name}"
     end
 
     def ob_server_config_mainnet_seeds_mainnet_seed2

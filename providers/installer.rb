@@ -96,8 +96,8 @@ action :configure do
         LIBBITCOIN_SERVERS_TESTNET_testnet_server4: ob_server_config_libbitcoin_servers_testnet_testnet_server4,
 
         AUTHENTICATION_SSL: ob_server_config_authenication_ssl,
-        AUTHENTICATION_SSL_CERT: ob_server_authenication_ssl_cert,
-        AUTHENTICATION_SSL_KEY: ob_server_authenication_ssl_key,
+        AUTHENTICATION_SSL_CERT: ob_server_config_authenication_ssl_cert,
+        AUTHENTICATION_SSL_KEY: ob_server_config_authenication_ssl_key,
         AUTHENTICATION_USERNAME: ob_secrets['server']['config']['AUTHENTICATION']['USERNAME'],
         AUTHENTICATION_PASSWORD: ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD'],
 

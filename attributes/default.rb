@@ -49,12 +49,16 @@ default['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4
 
 # [AUTHENTICATION]
 default['ob']['server']['config']['AUTHENTICATION']['SSL'] = 'False'
-# default['ob']['server']['config']['AUTHENTICATION']['SSL_CERT'] = '/path/to/certificate.crt'
-# default['ob']['server']['config']['AUTHENTICATION']['SSL_KEY'] = '/path/to/privkey.key'
+
+## The names of the files
+default['ob']['server']['config']['AUTHENTICATION']['SSL_CERT'] = 'ob_server_cert.pem'
+default['ob']['server']['config']['AUTHENTICATION']['SSL_KEY'] = 'ob_server_cert.key'
 
 ## THESE ARE STORED IN AN ENCRYPTED DATA BAG ##
 #USERNAME = username
 #PASSWORD = password
+default['ob']['server']['config']['AUTHENTICATION']['USERNAME'] = ''
+default['ob']['server']['config']['AUTHENTICATION']['PASSWORD'] = ''
 
 # [MAINNET_SEEDS]
 default['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2'] = 'seed2.openbazaar.org:8080,8b17082a57d648894a5181cb6e1b8a6f5b3b7e1c347c0671abfcd7deb6f105fe'
