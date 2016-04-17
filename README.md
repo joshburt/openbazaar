@@ -164,10 +164,9 @@ Just include `openbazaar` in your node's `run_list`:
 
 #### openbazaar::server
 Configures an OpenBazaar Server to run under a service account as a daemon.
-This includes autostarting with the system.
+This includes autostarting with the system. Includes the default recipe.
 
-Includes the default recipe.
-Example role:
+Example Role
 ```json
 {
   "name": "ob_server",
@@ -184,10 +183,9 @@ Example role:
 
 #### openbazaar::seed
 Configures an OpenBazaar Seed Server to run under a service account as a daemon.
-This includes autostarting with the system.
+This includes autostarting with the system. Includes the default recipe.
 
-Includes the default recipe.
-Example role:
+Example role
 ```json
 {
   "name": "ob_seed",
