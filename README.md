@@ -1,6 +1,8 @@
 openbazaar Cookbook
 ===================
-Installs OpenBazaar server components | https://openbazaar.org/
+Installs OpenBazaar server components.
+
+OpenBazaar Official Site | https://openbazaar.org/
 
 OpenBazaar Documentation | https://docs.openbazaar.org/
 
