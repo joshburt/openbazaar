@@ -15,7 +15,7 @@ Requirements
 
 Attributes
 ----------
-Node level defaults provided by the cookbook.  (for a sane default environment).`
+Node level defaults provided by the cookbook.  (for a sane default environment).
 - `node['ob']['deployment_type'] = 'source'`
 - `node['ob']['version'] = '1.1.2'`
 - `node['ob']['checksum'] = '535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'`
@@ -166,7 +166,7 @@ e.g.
 Usage
 -----
 #### openbazaar::default
-Installs and compiles OpenBazaar
+Downloads, compiles, and installs OpenBazaar and dependencies.
 
 Just include `openbazaar` in your node's `run_list`:
 
