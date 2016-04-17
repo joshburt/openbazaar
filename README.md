@@ -58,7 +58,7 @@ Attributes may be over-ridden in the normal, node/role/environment level attribu
 Additionally if one exists a databag definition will take presentence for any attribute declared.
 The databag is configured to be `{CHEF ENVIRONMENT}\ob`
 
-Sameple
+Example
 ```json
 {
   "name" : "data_bag_item_dev_ob_ob",
@@ -129,7 +129,7 @@ Sameple
 In addition the the non-secure attributes noted so far there are several encrypted attributes that are required.
 
 `{CHEF_ENVIRONMENT}\ob_secrets`
-Exmaple:
+Example:
 ```json
 {
   "id": "ob_secrets",
@@ -142,7 +142,6 @@ Exmaple:
     }
   }
 }
-
 ```
 
 
