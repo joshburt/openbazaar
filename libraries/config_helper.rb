@@ -635,19 +635,16 @@ module OpenBazaar
     end
 
     def databag_exists?(databag_name, databag_item)
-      Chef::Log.info "databag_name: #{databag_name} databag_item: #{databag_item}"
+      return_value = false
       if Chef::DataBag.list.key?(databag_name)
         mybag = Chef::DataBag.load(databag_name)
         myhash = mybag.to_hash
         if myhash[databag_item]
-          Chef::Log.info("# found data bag '#{databag_name}'")
-          return true
+          return_value = true
         else
-          Chef::Log.info("# '#{databag_name}' not found")
         end
       end
-      # return nil, false..
-      return false
+      return_value
     end
 
   end
