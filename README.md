@@ -20,6 +20,7 @@ Requirements
 Attributes
 ----------
 Node level defaults provided by the cookbook.  (for a sane default environment).
+
 - `node['ob']['deployment_type'] = 'source'`
 - `node['ob']['version'] = '1.1.2'`
 - `node['ob']['checksum'] = '535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'`
@@ -187,7 +188,6 @@ Example Role
     "recipe[openbazaar::server]"
   ]
 }
-
 ```
 
 #### openbazaar::seed
