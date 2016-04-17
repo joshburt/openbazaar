@@ -4,6 +4,8 @@
 # Copyright 2016, Joshua C. Burt
 ###############################################################################
 
+require 'securerandom'
+
 ###############################################################################
 # Install Type
 ###############################################################################
@@ -55,10 +57,14 @@ default['ob']['server']['config']['AUTHENTICATION']['SSL_CERT'] = 'ob_server_cer
 default['ob']['server']['config']['AUTHENTICATION']['SSL_KEY'] = 'ob_server_cert.key'
 
 ## THESE ARE STORED IN AN ENCRYPTED DATA BAG ##
-#USERNAME = username
-#PASSWORD = password
-default['ob']['server']['config']['AUTHENTICATION']['USERNAME'] = ''
-default['ob']['server']['config']['AUTHENTICATION']['PASSWORD'] = ''
+default['ob']['server']['config']['AUTHENTICATION']['USERNAME'] = SecureRandom.hex
+default['ob']['server']['config']['AUTHENTICATION']['PASSWORD'] = SecureRandom.hex
+
+# THESE SHOULD BE OVER-RIDDEN!
+default['ob']['certificate']['common_name'] = 'www.f00bar.com'
+default['ob']['certificate']['org'] = 'Foo Bar'
+default['ob']['certificate']['org_unit'] = 'Lab'
+default['ob']['certificate']['country'] = 'US'
 
 # [MAINNET_SEEDS]
 default['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2'] = 'seed2.openbazaar.org:8080,8b17082a57d648894a5181cb6e1b8a6f5b3b7e1c347c0671abfcd7deb6f105fe'

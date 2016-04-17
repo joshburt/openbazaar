@@ -482,6 +482,54 @@ module OpenBazaar
       return_value
     end
 
+    def ob_certificate_common_name
+      return_value = node['ob']['certificate']['common_name']
+      unless ob_config.nil?
+        unless ob_config['certificate'].nil?
+          unless ob_config['certificate']['common_name'].nil?
+            return_value = ob_config['certificate']['common_name']
+          end
+        end
+      end
+      return_value
+    end
+
+    def ob_certificate_org
+      return_value = node['ob']['certificate']['org']
+      unless ob_config.nil?
+        unless ob_config['certificate'].nil?
+          unless ob_config['certificate']['org'].nil?
+            return_value = ob_config['certificate']['org']
+          end
+        end
+      end
+      return_value
+    end
+
+    def ob_certificate_org_unit
+      return_value = node['ob']['certificate']['org_unit']
+      unless ob_config.nil?
+        unless ob_config['certificate'].nil?
+          unless ob_config['certificate']['org_unit'].nil?
+            return_value = ob_config['certificate']['org_unit']
+          end
+        end
+      end
+      return_value
+    end
+
+    def ob_certificate_country
+      return_value = node['ob']['certificate']['country']
+      unless ob_config.nil?
+        unless ob_config['certificate'].nil?
+          unless ob_config['certificate']['country'].nil?
+            return_value = ob_config['certificate']['country']
+          end
+        end
+      end
+      return_value
+    end
+
     def ob_client_base_dir
       if deployment_type == 'binary'
         "#{ob_base_dir}/resources/OpenBazaar-Client"

@@ -71,10 +71,10 @@ action :configure do
   # https://github.com/chef-cookbooks/openssl
   #############################################################################
   openssl_x509 "#{ob_server_ssl_dir}/ob_server_cert.pem" do
-    common_name 'www.f00bar.com'
-    org 'Foo Bar'
-    org_unit 'Lab'
-    country 'US'
+    common_name ob_certificate_common_name
+    org ob_certificate_org
+    org_unit ob_certificate_org_unit
+    country ob_certificate_country
   end
 
   #############################################################################
