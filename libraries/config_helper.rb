@@ -372,19 +372,49 @@ module OpenBazaar
 
     def ob_server_config_mainnet_seeds_mainnet_seed2
       return_value = node['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']
-      # ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed2']
+      unless ob_config.nil?
+        unless ob_config['server'].nil?
+          unless ob_config['server']['config'].nil?
+            unless ob_config['server']['config']['MAINNET_SEEDS'].nil?
+              unless ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed2'].nil?
+                return_value = ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed2']
+              end
+            end
+          end
+        end
+      end
       return_value
     end
 
     def ob_server_config_mainnet_seeds_mainnet_seed3
       return_value = node['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed3']
-      # ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed3']
+      unless ob_config.nil?
+        unless ob_config['server'].nil?
+          unless ob_config['server']['config'].nil?
+            unless ob_config['server']['config']['MAINNET_SEEDS'].nil?
+              unless ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed3'].nil?
+                return_value = ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed3']
+              end
+            end
+          end
+        end
+      end
       return_value
     end
 
     def ob_server_config_testnet_seeds_testnet_seed1
       return_value = node['ob']['server']['config']['TESTNET_SEEDS']['testnet_seed1']
-      # ob_config['server']['config']['TESTNET_SEEDS']['testnet_seed1']
+      unless ob_config.nil?
+        unless ob_config['server'].nil?
+          unless ob_config['server']['config'].nil?
+            unless ob_config['server']['config']['TESTNET_SEEDS'].nil?
+              unless ob_config['server']['config']['TESTNET_SEEDS']['testnet_seed1'].nil?
+                return_value = ob_config['server']['config']['TESTNET_SEEDS']['testnet_seed1']
+              end
+            end
+          end
+        end
+      end
       return_value
     end
 
