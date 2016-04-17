@@ -1,6 +1,6 @@
 ###############################################################################
 # Cookbook Name:: openbazaar
-# OpenBazaar Module Definition
+# OpenBazaar SourceHelper Module Definition
 # Copyright 2016, Joshua C. Burt
 ###############################################################################
 
@@ -42,13 +42,6 @@ module OpenBazaar
         action :install
       end
       python_package 'cryptography'
-
-
-      #########################################################################
-      # Client Dependency Processing
-      #########################################################################
-      # include_recipe 'nodejs'
-
     end
 
     def sync_source_code
@@ -65,14 +58,6 @@ module OpenBazaar
       end
 
       #########################################################################
-      # Client Source Sync
-      #########################################################################
-      # git ob_client_base_dir do
-      #   repository ob_config['client']['source']
-      #   action :sync
-      # end
-
-      #########################################################################
       # Install pip requirments for the server if need be
       # (cd ./OpenBazaar-Server; pip install -r requirements.txt)
       #########################################################################
@@ -86,14 +71,6 @@ module OpenBazaar
         backup false
         action :create
       end
-
-      #########################################################################
-      # Client Dependency Processing
-      #########################################################################
-      # nodejs_npm 'install client dependencies with npm' do
-      #   path ob_client_base_dir
-      #   action :install
-      # end
     end
   end
 end
