@@ -32,7 +32,7 @@ module OpenBazaar
       ## Special Handling For libzmq
       # requires libsodium
       #########################################################################
-      include_recipe 'zeromq'
+      include_recipe 'zmq'
 
       #########################################################################
       ## Python Dependencies
