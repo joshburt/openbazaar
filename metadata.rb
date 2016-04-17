@@ -9,6 +9,8 @@ version          '0.2.0'
 issues_url 'https://github.com/joshburt/openbazaar/issues'
 source_url 'https://github.com/joshburt/openbazaar'
 
+supports 'ubuntu'
+
 depends 'git', '~> 4.0'
 depends 'openssl'
 depends 'chef-sugar'
