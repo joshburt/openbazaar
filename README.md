@@ -1,6 +1,7 @@
 openbazaar Cookbook
 ===================
-Installs OpenBazaar https://openbazaar.org/
+Installs OpenBazaar server components https://openbazaar.org/
+OpenBazaar Documentation https://docs.openbazaar.org/
 
 Requirements
 ------------
@@ -10,7 +11,7 @@ Requirements
 - `chef-sugar`
 - `build-essential`
 - `poise-python`
-- `zeromq`
+- `zmq`
 - `libsodium`
 
 Attributes
