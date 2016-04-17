@@ -98,8 +98,8 @@ action :configure do
         AUTHENTICATION_SSL: ob_server_config_authenication_ssl,
         AUTHENTICATION_SSL_CERT: ob_server_config_authenication_ssl_cert,
         AUTHENTICATION_SSL_KEY: ob_server_config_authenication_ssl_key,
-        AUTHENTICATION_USERNAME: ob_secrets['server']['config']['AUTHENTICATION']['USERNAME'],
-        AUTHENTICATION_PASSWORD: ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD'],
+        AUTHENTICATION_USERNAME: ob_server_config_authenication_username,
+        AUTHENTICATION_PASSWORD: ob_server_config_authenication_password,
 
         MAINNET_SEEDS_mainnet_seed2: ob_server_config_mainnet_seeds_mainnet_seed2,
         MAINNET_SEEDS_mainnet_seed3: ob_server_config_mainnet_seeds_mainnet_seed3,

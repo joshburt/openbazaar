@@ -402,6 +402,38 @@ module OpenBazaar
       "#{ob_server_ssl_dir}/#{ob_server_config_authenication_ssl_key_name}"
     end
 
+    def ob_server_config_authenication_username
+      return_value = node['ob']['server']['config']['AUTHENTICATION']['USERNAME']
+      unless ob_secrets.nil?
+        unless ob_secrets['server'].nil?
+          unless ob_secrets['server']['config'].nil?
+            unless ob_secrets['server']['config']['AUTHENTICATION'].nil?
+              unless ob_secrets['server']['config']['AUTHENTICATION']['USERNAME'].nil?
+                return_value = ob_secrets['server']['config']['AUTHENTICATION']['USERNAME']
+              end
+            end
+          end
+        end
+      end
+      return_value
+    end
+
+    def ob_server_config_authenication_password
+      return_value = node['ob']['server']['config']['AUTHENTICATION']['PASSWORD']
+      unless ob_secrets.nil?
+        unless ob_secrets['server'].nil?
+          unless ob_secrets['server']['config'].nil?
+            unless ob_secrets['server']['config']['AUTHENTICATION'].nil?
+              unless ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD'].nil?
+                return_value = ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD']
+              end
+            end
+          end
+        end
+      end
+      return_value
+    end
+
     def ob_server_config_mainnet_seeds_mainnet_seed2
       return_value = node['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']
       unless ob_config.nil?
