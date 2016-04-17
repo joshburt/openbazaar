@@ -55,7 +55,7 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 
 Attributes may be over-ridden in the normal node/role/environment level attribute `override_attributes`.
 
-Additionally if one exists a databag definition will take precedence for any above attribute declaration.
+Additionally if one exists a data bag definition will take precedence over any above attribute declaration.
 The data bag item is configured to be `{CHEF ENVIRONMENT}\ob`
 
 Example
