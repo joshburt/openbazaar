@@ -9,13 +9,22 @@ OpenBazaar Documentation | https://docs.openbazaar.org/
 Requirements
 ------------
 #### packages
-- `git`
-- `openssl`
-- `chef-sugar`
 - `build-essential`
-- `poise-python`
-- `zmq`
+- `chef_handler`
+- `chef-sugar`
+- `dmg`
+- `git`
 - `libsodium`
+- `openssl`
+- `poise`
+- `poise-archive`
+- `poise-languages`
+- `poise-python`
+- `seven_zip`
+- `windows`
+- `yum`
+- `yum-epel`
+- `zmq`
 
 Attributes
 ----------
