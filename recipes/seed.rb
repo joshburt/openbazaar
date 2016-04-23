@@ -51,7 +51,7 @@ template '/etc/init/openbazaarseedd.conf' do
   )
   action :create
   notifies :run, 'execute[initctl reload-configuration]'
-  only_if {node['platform_family'] == 'debian'}
+  only_if { node['platform_family'] == 'debian' }
 end
 
 ###############################################################################
