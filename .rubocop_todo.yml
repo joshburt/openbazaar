@@ -49,13 +49,6 @@ Style/IfInsideElse:
   Exclude:
     - 'libraries/artifact_helper.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: Width.
-Style/IndentationWidth:
-  Exclude:
-    - 'libraries/config_helper.rb'
-
 # Offense count: 5
 # Cop supports --auto-correct.
 Style/LeadingCommentSpace:

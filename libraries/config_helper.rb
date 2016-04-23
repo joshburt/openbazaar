@@ -151,7 +151,7 @@ module OpenBazaar
         unless ob_config['server'].nil?
           unless ob_config['server']['config'].nil?
             unless ob_config['server']['config']['allowed_admin_ip'].nil?
-                return_value = ob_config['server']['config']['allowed_admin_ip']
+              return_value = ob_config['server']['config']['allowed_admin_ip']
             end
           end
         end
