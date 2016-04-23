@@ -8,13 +8,11 @@ module OpenBazaar
   # helpers for resolving configuration facts
   module ConfigHelper
     def deployment_type
-      # Then we have some type of structure
-      unless ob_config.nil? # protects against non-existant databag
-        unless ob_config['deployment_type'].nil? # protected against non-existant data bag items
-          ob_config['deployment_type']
-        end
+      if ob_config['deployment_type'].nil?
+        node['ob']['deployment_type']
+      else
+        ob_config['deployment_type']
       end
-      node['ob']['deployment_type']
     end
 
     def ob_base_dir
@@ -35,334 +33,187 @@ module OpenBazaar
     end
 
     def ob_service_account
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['ob_service_user'].nil?
-            ob_config['server']['ob_service_user']
-          end
-        end
+      if defined?(ob_config['server']['ob_service_user'])
+        ob_config['server']['ob_service_user']
+      else
+        node['ob']['server']['ob_service_user']
       end
-      node['ob']['server']['ob_service_user']
     end
 
     def ob_service_group
-      # Then we have some type of structure
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['ob_service_group'].nil?
-            ob_config['server']['ob_service_group']
-          end
-        end
+      if defined?(ob_config['server']['ob_service_group'])
+        ob_config['server']['ob_service_group']
+      else
+        node['ob']['server']['ob_service_group']
       end
-      node['ob']['server']['ob_service_group']
     end
 
     def ob_server_dht_port
-      # Then we have some type of structure
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['ports'].nil?
-              unless ob_config['server']['config']['ports']['dht'].nil?
-                ob_config['server']['config']['ports']['dht']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['ports']['dht'])
+        ob_config['server']['config']['ports']['dht']
+      else
+        node['ob']['server']['config']['ports']['dht']
       end
-      node['ob']['server']['config']['ports']['dht']
     end
 
     def ob_server_testnet_dht_port
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['ports'].nil?
-              unless ob_config['server']['config']['ports']['testnet_dht'].nil?
-                ob_config['server']['config']['ports']['testnet_dht']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['ports']['testnet_dht'])
+        ob_config['server']['config']['ports']['testnet_dht']
+      else
+        node['ob']['server']['config']['ports']['testnet_dht']
       end
-      node['ob']['server']['config']['ports']['testnet_dht']
     end
 
     def ob_server_rest_port
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['ports'].nil?
-              unless ob_config['server']['config']['ports']['rest'].nil?
-                ob_config['server']['config']['ports']['rest']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['ports']['rest'])
+        ob_config['server']['config']['ports']['rest']
+      else
+        node['ob']['server']['config']['ports']['rest']
       end
-      node['ob']['server']['config']['ports']['rest']
     end
 
     def ob_server_websocket_port
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['ports'].nil?
-              unless ob_config['server']['config']['ports']['websocket'].nil?
-                ob_config['server']['config']['ports']['websocket']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['ports']['websocket'])
+        ob_config['server']['config']['ports']['websocket']
+      else
+        node['ob']['server']['config']['ports']['websocket']
       end
-      node['ob']['server']['config']['ports']['websocket']
     end
 
     def ob_server_heartbeat_port
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['ports'].nil?
-              unless ob_config['server']['config']['ports']['heartbeat'].nil?
-                ob_config['server']['config']['ports']['heartbeat']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['ports']['heartbeat'])
+        ob_config['server']['config']['ports']['heartbeat']
+      else
+        node['ob']['server']['config']['ports']['heartbeat']
       end
-      node['ob']['server']['config']['ports']['heartbeat']
     end
 
     def ob_server_allowed_admin_ip
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['allowed_admin_ip'].nil?
-              ob_config['server']['config']['allowed_admin_ip']
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['allowed_admin_ip'])
+        ob_config['server']['config']['allowed_admin_ip']
+      else
+        node['ob']['server']['config']['allowed_admin_ip']
       end
-      node['ob']['server']['config']['allowed_admin_ip']
     end
 
     def ob_server_additional_flags
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['additional_flags'].nil?
-              ob_config['server']['config']['additional_flags']
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['additional_flags'])
+        ob_config['server']['config']['additional_flags']
+      else
+        node['ob']['server']['config']['additional_flags']
       end
-      node['ob']['server']['config']['additional_flags']
     end
 
     def ob_server_seed_port
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['ports'].nil?
-              unless ob_config['server']['config']['ports']['seed'].nil?
-                ob_config['server']['config']['ports']['seed']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['ports']['seed'])
+        ob_config['server']['config']['ports']['seed']
+      else
+        node['ob']['server']['config']['ports']['seed']
       end
-      node['ob']['server']['config']['ports']['seed']
     end
 
     def ob_server_source
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['source'].nil?
-            ob_config['server']['source']
-          end
-        end
+      if defined?(ob_config['server']['source'])
+        ob_config['server']['source']
+      else
+        node['ob']['server']['source']
       end
-      node['ob']['server']['source']
     end
 
     def ob_server_config_constants_data_folder
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['CONSTANTS'].nil?
-              unless ob_config['server']['config']['CONSTANTS']['DATA_FOLDER'].nil?
-                ob_config['server']['config']['CONSTANTS']['DATA_FOLDER']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['CONSTANTS']['DATA_FOLDER'])
+        ob_config['server']['config']['CONSTANTS']['DATA_FOLDER']
+      else
+        node['ob']['server']['config']['CONSTANTS']['DATA_FOLDER']
       end
-      node['ob']['server']['config']['CONSTANTS']['DATA_FOLDER']
     end
 
     def ob_server_config_constants_ksize
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['CONSTANTS'].nil?
-              unless ob_config['server']['config']['CONSTANTS']['KSIZE'].nil?
-                ob_config['server']['config']['CONSTANTS']['KSIZE']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['CONSTANTS']['KSIZE'])
+        ob_config['server']['config']['CONSTANTS']['KSIZE']
+      else
+        node['ob']['server']['config']['CONSTANTS']['KSIZE']
       end
-      node['ob']['server']['config']['CONSTANTS']['KSIZE']
     end
 
     def ob_server_config_constants_alpha
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['CONSTANTS'].nil?
-              unless ob_config['server']['config']['CONSTANTS']['ALPHA'].nil?
-                ob_config['server']['config']['CONSTANTS']['ALPHA']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['CONSTANTS']['ALPHA'])
+        ob_config['server']['config']['CONSTANTS']['ALPHA']
+      else
+        node['ob']['server']['config']['CONSTANTS']['ALPHA']
       end
-      node['ob']['server']['config']['CONSTANTS']['ALPHA']
     end
 
     def ob_server_config_constants_transaction_fee
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['CONSTANTS'].nil?
-              unless ob_config['server']['config']['CONSTANTS']['TRANSACTION_FEE'].nil?
-                ob_config['server']['config']['CONSTANTS']['TRANSACTION_FEE']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['CONSTANTS']['TRANSACTION_FEE'])
+        ob_config['server']['config']['CONSTANTS']['TRANSACTION_FEE']
+      else
+        node['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE']
       end
-      node['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE']
     end
 
     def ob_server_config_constants_resolver
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['CONSTANTS'].nil?
-              unless ob_config['server']['config']['CONSTANTS']['RESOLVER'].nil?
-                ob_config['server']['config']['CONSTANTS']['RESOLVER']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['CONSTANTS']['RESOLVER'])
+        ob_config['server']['config']['CONSTANTS']['RESOLVER']
+      else
+        node['ob']['server']['config']['CONSTANTS']['RESOLVER']
       end
-      node['ob']['server']['config']['CONSTANTS']['RESOLVER']
     end
 
     def ob_server_config_libbitcoin_servers_mainnet_server1
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['LIBBITCOIN_SERVERS'].nil?
-              unless ob_config['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1'].nil?
-                ob_config['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1'])
+        ob_config['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']
+      else
+        node['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']
       end
-      node['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']
     end
 
     def ob_server_config_libbitcoin_servers_mainnet_server3
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['LIBBITCOIN_SERVERS'].nil?
-              unless ob_config['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3'].nil?
-                ob_config['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3'])
+        ob_config['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']
+      else
+        node['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']
       end
-      node['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']
     end
 
     def ob_server_config_libbitcoin_servers_testnet_testnet_server2
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET'].nil?
-              unless ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2'].nil?
-                ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2'])
+        ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']
+      else
+        node['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']
       end
-      node['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']
     end
 
     def ob_server_config_libbitcoin_servers_testnet_testnet_server4
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET'].nil?
-              unless ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4'].nil?
-                ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4'])
+        ob_config['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']
+      else
+        node['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']
       end
-      node['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']
     end
 
     def ob_server_config_authenication_ssl
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['AUTHENTICATION'].nil?
-              unless ob_config['server']['config']['AUTHENTICATION']['SSL'].nil?
-                ob_config['server']['config']['AUTHENTICATION']['SSL']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['AUTHENTICATION']['SSL'])
+        ob_config['server']['config']['AUTHENTICATION']['SSL']
+      else
+        node['ob']['server']['config']['AUTHENTICATION']['SSL']
       end
-      node['ob']['server']['config']['AUTHENTICATION']['SSL']
     end
 
     def ob_server_config_authenication_ssl_cert_name
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['AUTHENTICATION'].nil?
-              unless ob_config['server']['config']['AUTHENTICATION']['SSL_CERT'].nil?
-                ob_config['server']['config']['AUTHENTICATION']['SSL_CERT']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['AUTHENTICATION']['SSL_CERT'])
+        ob_config['server']['config']['AUTHENTICATION']['SSL_CERT']
+      else
+        node['ob']['server']['config']['AUTHENTICATION']['SSL_CERT']
       end
-      node['ob']['server']['config']['AUTHENTICATION']['SSL_CERT']
     end
 
     def ob_server_config_authenication_ssl_key_name
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['AUTHENTICATION'].nil?
-              unless ob_config['server']['config']['AUTHENTICATION']['SSL_KEY'].nil?
-                ob_config['server']['config']['AUTHENTICATION']['SSL_KEY']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['AUTHENTICATION']['SSL_KEY'])
+        ob_config['server']['config']['AUTHENTICATION']['SSL_KEY']
+      else
+        node['ob']['server']['config']['AUTHENTICATION']['SSL_KEY']
       end
-      node['ob']['server']['config']['AUTHENTICATION']['SSL_KEY']
     end
 
     def ob_server_config_authenication_ssl_cert
@@ -374,122 +225,75 @@ module OpenBazaar
     end
 
     def ob_server_config_authenication_username
-      unless ob_secrets.nil?
-        unless ob_secrets['server'].nil?
-          unless ob_secrets['server']['config'].nil?
-            unless ob_secrets['server']['config']['AUTHENTICATION'].nil?
-              unless ob_secrets['server']['config']['AUTHENTICATION']['USERNAME'].nil?
-                ob_secrets['server']['config']['AUTHENTICATION']['USERNAME']
-              end
-            end
-          end
-        end
+      if defined?(ob_secrets['server']['config']['AUTHENTICATION']['USERNAME'])
+        ob_secrets['server']['config']['AUTHENTICATION']['USERNAME']
+      else
+        node['ob']['server']['config']['AUTHENTICATION']['USERNAME']
       end
-      node['ob']['server']['config']['AUTHENTICATION']['USERNAME']
     end
 
     def ob_server_config_authenication_password
-      unless ob_secrets.nil?
-        unless ob_secrets['server'].nil?
-          unless ob_secrets['server']['config'].nil?
-            unless ob_secrets['server']['config']['AUTHENTICATION'].nil?
-              unless ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD'].nil?
-                ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD']
-              end
-            end
-          end
-        end
+      if defined?(ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD'])
+        ob_secrets['server']['config']['AUTHENTICATION']['PASSWORD']
+      else
+        node['ob']['server']['config']['AUTHENTICATION']['PASSWORD']
       end
-      node['ob']['server']['config']['AUTHENTICATION']['PASSWORD']
     end
 
     def ob_server_config_mainnet_seeds_mainnet_seed2
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['MAINNET_SEEDS'].nil?
-              unless ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed2'].nil?
-                ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed2']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed2'])
+        ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed2']
+      else
+        node['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']
       end
-      node['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']
     end
 
     def ob_server_config_mainnet_seeds_mainnet_seed3
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['MAINNET_SEEDS'].nil?
-              unless ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed3'].nil?
-                ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed3']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed3'])
+        ob_config['server']['config']['MAINNET_SEEDS']['mainnet_seed3']
+      else
+        node['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed3']
       end
-      node['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed3']
     end
 
     def ob_server_config_testnet_seeds_testnet_seed1
-      unless ob_config.nil?
-        unless ob_config['server'].nil?
-          unless ob_config['server']['config'].nil?
-            unless ob_config['server']['config']['TESTNET_SEEDS'].nil?
-              unless ob_config['server']['config']['TESTNET_SEEDS']['testnet_seed1'].nil?
-                ob_config['server']['config']['TESTNET_SEEDS']['testnet_seed1']
-              end
-            end
-          end
-        end
+      if defined?(ob_config['server']['config']['TESTNET_SEEDS']['testnet_seed1'])
+        ob_config['server']['config']['TESTNET_SEEDS']['testnet_seed1']
+      else
+        node['ob']['server']['config']['TESTNET_SEEDS']['testnet_seed1']
       end
-      node['ob']['server']['config']['TESTNET_SEEDS']['testnet_seed1']
     end
 
     def ob_certificate_common_name
-      unless ob_config.nil?
-        unless ob_config['certificate'].nil?
-          unless ob_config['certificate']['common_name'].nil?
-            ob_config['certificate']['common_name']
-          end
-        end
+      if defined?(ob_config['certificate']['common_name'])
+        ob_config['certificate']['common_name']
+      else
+        node['ob']['certificate']['common_name']
       end
-      node['ob']['certificate']['common_name']
     end
 
     def ob_certificate_org
-      unless ob_config.nil?
-        unless ob_config['certificate'].nil?
-          unless ob_config['certificate']['org'].nil?
-            ob_config['certificate']['org']
-          end
-        end
+      if defined?(ob_config['certificate']['org'])
+        ob_config['certificate']['org']
+      else
+        node['ob']['certificate']['org']
       end
-      node['ob']['certificate']['org']
     end
 
     def ob_certificate_org_unit
-      unless ob_config.nil?
-        unless ob_config['certificate'].nil?
-          unless ob_config['certificate']['org_unit'].nil?
-            ob_config['certificate']['org_unit']
-          end
-        end
+      if defined?(ob_config['certificate']['org_unit'])
+        ob_config['certificate']['org_unit']
+      else
+        node['ob']['certificate']['org_unit']
       end
-      node['ob']['certificate']['org_unit']
     end
 
     def ob_certificate_country
-      unless ob_config.nil?
-        unless ob_config['certificate'].nil?
-          unless ob_config['certificate']['country'].nil?
-            ob_config['certificate']['country']
-          end
-        end
+      if defined?(ob_config['certificate']['country'])
+        ob_config['certificate']['country']
+      else
+        node['ob']['certificate']['country']
       end
-      node['ob']['certificate']['country']
     end
 
     def ob_client_base_dir
@@ -606,6 +410,5 @@ module OpenBazaar
       end
       return_value
     end
-
   end
 end
