@@ -562,11 +562,12 @@ module OpenBazaar
       #      set the heartbeat port
       # --pidfile PIDFILE     name of the pid file
       #########################################################################
-      if deployment_type == 'binary'
-        server_exec = "#{ob_server_base_dir}/openbazaard"
-      else
-        server_exec = "python #{ob_server_base_dir}/openbazaard.py"
-      end
+      server_exec = if deployment_type == 'binary'
+                      "#{ob_server_base_dir}/openbazaard"
+                    else
+                      "python #{ob_server_base_dir}/openbazaard.py"
+                    end
+
     "#{server_exec} start --daemon"\
       " --port #{ob_server_dht_port}"\
       " --allowip #{ob_server_allowed_admin_ip}"\
