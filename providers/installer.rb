@@ -45,13 +45,13 @@ action :install do
     # We don't perform anything if we are a source distribution
     ###########################################################################
     case node['platform_family']
-      when 'debian'
-        dpkg_package artifact_name do
-          source artifact_cache_path
-        end
-      else
-        log 'the installer does not currently support this os. good luck!'
-        log "cached installer may be found here #{artifact_cache_path}"
+    when 'debian'
+      dpkg_package artifact_name do
+        source artifact_cache_path
+      end
+    else
+      log 'the installer does not currently support this os. good luck!'
+      log "cached installer may be found here #{artifact_cache_path}"
     end
   end
 end

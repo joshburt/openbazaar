@@ -21,10 +21,10 @@ module OpenBazaar
 
     def ob_base_dir
       case node['platform_family']
-        when 'debian'
-          '/usr/share/openbazaar'
-        else
-          log 'the installer does not currently support this os. good luck!'
+      when 'debian'
+        '/usr/share/openbazaar'
+      else
+        log 'the installer does not currently support this os. good luck!'
       end
     end
 

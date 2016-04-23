@@ -12,10 +12,10 @@ module OpenBazaar
 
     def artifact_name
       case node['platform_family']
-        when 'debian'
-          "openbazaar_#{artifact_version}_amd64.deb"
-        else
-          log 'the installer does not currently support this os. good luck!'
+      when 'debian'
+        "openbazaar_#{artifact_version}_amd64.deb"
+      else
+        log 'the installer does not currently support this os. good luck!'
       end
 
     end
