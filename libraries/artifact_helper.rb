@@ -5,6 +5,7 @@
 ###############################################################################
 
 module OpenBazaar
+  # helpers for resolving artifact facts
   module ArtifactHelper
     def artifact_cache_path
       ::File.join(Chef::Config['file_cache_path'], artifact_name)

@@ -5,6 +5,7 @@
 ###############################################################################
 
 module OpenBazaar
+  # helpers for resolving configuration facts
   module ConfigHelper
     def deployment_type
       # default value

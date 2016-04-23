@@ -5,6 +5,7 @@
 ###############################################################################
 
 module OpenBazaar
+  # helpers for source package installations (mostly dependencies)
   module SourceHelper
     def install_source_dependencies
       #########################################################################

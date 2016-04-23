@@ -35,13 +35,5 @@ Style/AccessorMethodName:
   Exclude:
     - 'libraries/artifact_helper.rb'
 
-# Offense count: 3
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'libraries/artifact_helper.rb'
-    - 'libraries/config_helper.rb'
-    - 'libraries/source_helper.rb'
 
 
