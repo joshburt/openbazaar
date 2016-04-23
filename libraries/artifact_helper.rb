@@ -17,7 +17,6 @@ module OpenBazaar
       else
         log 'the installer does not currently support this os. good luck!'
       end
-
     end
 
     def artifact_source_url
