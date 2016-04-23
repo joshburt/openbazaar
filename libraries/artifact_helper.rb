@@ -49,7 +49,7 @@ module OpenBazaar
     end
 
     def load_ob_data
-      databag_exists?(node.chef_environment, 'ob') ? data_bag_item(node.chef_environment, 'ob') : nil
+      databag_exists?(node.chef_environment, 'ob') ? data_bag_item(node.chef_environment, 'ob') : {}
     end
   end
 end

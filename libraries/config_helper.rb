@@ -587,11 +587,11 @@ module OpenBazaar
     private
 
     def load_ob_config
-      databag_exists?(node.chef_environment, 'ob') ? data_bag_item(node.chef_environment, 'ob') : nil
+      databag_exists?(node.chef_environment, 'ob') ? data_bag_item(node.chef_environment, 'ob') : {}
     end
 
     def load_ob_secrets
-      databag_exists?(node.chef_environment, 'ob_secrets') ? encrypted_data_bag_item(node.chef_environment, 'ob_secrets') : nil
+      databag_exists?(node.chef_environment, 'ob_secrets') ? encrypted_data_bag_item(node.chef_environment, 'ob_secrets') : {}
     end
 
     def databag_exists?(databag_name, databag_item)
