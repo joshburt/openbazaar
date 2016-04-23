@@ -26,36 +26,30 @@ module OpenBazaar
     def artifact_version
       if ob_data.nil?
         node['ob']['version']
+      elsif ob_data['version'] != '' || ob_data['version'].nil?
+        ob_data['version']
       else
-        if ob_data['version'] != '' || ob_data['version'].nil?
-          ob_data['version']
-        else
-          node['ob']['version']
-        end
+        node['ob']['version']
       end
     end
 
     def artifact_checksum
       if ob_data.nil?
         node['ob']['checksum']
+      elsif ob_data['checksum'] != '' || ob_data['checksum'].nil?
+        ob_data['checksum']
       else
-        if ob_data['checksum'] != '' || ob_data['checksum'].nil?
-          ob_data['checksum']
-        else
-          node['ob']['checksum']
-        end
+        node['ob']['checksum']
       end
     end
 
     def artifact_source_base
       if ob_data.nil?
         node['ob']['source']
+      elsif ob_data['source'] != '' || ob_data['source'].nil?
+        ob_data['source']
       else
-        if ob_data['source'] != '' || ob_data['source'].nil?
-          ob_data['source']
-        else
-          node['ob']['source']
-        end
+        node['ob']['source']
       end
     end
 
