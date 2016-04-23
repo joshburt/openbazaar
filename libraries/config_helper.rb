@@ -579,21 +579,21 @@ module OpenBazaar
     def ob_seed_daemon_exec_cmd
       # ( Seed daemon is only distributed in the source package )
       #########################################################################
-      #usage:
+      # usage:
       #    python httpseed.py <command> [<args>]
       #    python httpseed.py <command> --help
       #
-      #commands:
+      # commands:
       #    start            start the seed server
       #    stop             shutdown the server and disconnect
       #    restart          restart the server
       #########################################################################
-      #usage: usage:
+      # usage: usage:
       #    python openbazaard.py start [-d DAEMON]
       #
-      #Start the seed server
+      # Start the seed server
       #
-      #optional arguments:
+      # optional arguments:
       #    -h, --help            show this help message and exit
       #    -d, --daemon          run the server in the background
       #    -t, --testnet         use the test network
