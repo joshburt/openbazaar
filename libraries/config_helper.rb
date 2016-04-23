@@ -567,7 +567,7 @@ module OpenBazaar
                       "python #{ob_server_base_dir}/openbazaard.py"
                     end
 
-    "#{server_exec} start --daemon"\
+      "#{server_exec} start --daemon"\
       " --port #{ob_server_dht_port}"\
       " --allowip #{ob_server_allowed_admin_ip}"\
       " --restapiport #{ob_server_rest_port}"\
