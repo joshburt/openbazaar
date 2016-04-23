@@ -4,7 +4,6 @@
 # Copyright 2016, Joshua C. Burt
 ###############################################################################
 
-
 ###############################################################################
 # ensure chef-sugar is in the run list, explicitly calling it out here
 # allows the consumer to NOT need to include it in the runlist (roles, etc)

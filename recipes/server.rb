@@ -14,10 +14,10 @@
 ###############################################################################
 service 'openbazaard' do
   case node['platform']
-    when 'ubuntu'
-      if node['platform_version'].to_f >= 9.10
-        provider Chef::Provider::Service::Upstart
-      end
+  when 'ubuntu'
+    if node['platform_version'].to_f >= 9.10
+      provider Chef::Provider::Service::Upstart
+    end
   end
   action :stop
 end
@@ -43,15 +43,15 @@ end
 ###############################################################################
 template '/etc/init/openbazaard.conf' do
   source 'openbazaard.conf.erb'
-  variables({
-                user: ob_service_account,
-                group: ob_service_group,
-                chdir: ob_server_base_dir,
-                exec: ob_server_daemon_exec_cmd
-            })
+  variables(
+    user: ob_service_account,
+    group: ob_service_group,
+    chdir: ob_server_base_dir,
+    exec: ob_server_daemon_exec_cmd
+  )
   action :create
   notifies :run, 'execute[initctl reload-configuration]'
-  only_if {node['platform_family'] == 'debian'}
+  only_if { node['platform_family'] == 'debian' }
 end
 
 ###############################################################################
@@ -66,10 +66,10 @@ end
 ###############################################################################
 service 'openbazaard' do
   case node['platform']
-    when 'ubuntu'
-      if node['platform_version'].to_f >= 9.10
-        provider Chef::Provider::Service::Upstart
-      end
+  when 'ubuntu'
+    if node['platform_version'].to_f >= 9.10
+      provider Chef::Provider::Service::Upstart
+    end
   end
   action :start
 end
