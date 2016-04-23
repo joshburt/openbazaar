@@ -3,6 +3,11 @@ OpenBazaar Cookbook CHANGELOG
 
 This file is used to list changes made in each version of the openbazaar cookbook.
 
+0.3.2
+-----
+- Added skeleton for tests
+- updated readme for tested platforms
+
 0.3.1
 -----
 - Documentation clean up

@@ -20,6 +20,11 @@ OpenBazaar is an open source project to create a decentralized network for peer 
 - OpenBazaar Official Site | https://openbazaar.org/
 - OpenBazaar Documentation | https://docs.openbazaar.org/
 
+Platform
+------------
+* Tested on
+    * Ubuntu 14.04
+  
 Requirements
 ------------
 The below cookbooks are dependencies, either direct or indirect.
