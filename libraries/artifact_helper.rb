@@ -57,10 +57,10 @@ module OpenBazaar
     private
 
     def ob_data
-      @ob_data ||= get_ob_data
+      @ob_data ||= load_ob_data
     end
 
-    def get_ob_data
+    def load_ob_data
       databag_exists?(node.chef_environment, 'ob') ? data_bag_item(node.chef_environment, 'ob') : nil
     end
   end

@@ -30,10 +30,6 @@ Metrics/MethodLength:
 Metrics/ModuleLength:
   Max: 534
 
-# Offense count: 1
-Style/AccessorMethodName:
-  Exclude:
-    - 'libraries/artifact_helper.rb'
 
 
 
