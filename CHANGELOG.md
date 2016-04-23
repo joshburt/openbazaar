@@ -1,7 +1,11 @@
-blockstack_resolver CHANGELOG
+OpenBazaar Cookbook CHANGELOG
 =============================
 
-This file is used to list changes made in each version of the blockstack_resolver cookbook.
+This file is used to list changes made in each version of the openbazaar cookbook.
+
+0.3.1
+-----
+- Documentation clean up
 
 0.3.0
 -----
@@ -15,7 +19,7 @@ This file is used to list changes made in each version of the blockstack_resolve
 
 0.2.2
 -----
-- Joshua C. Burt - Initial release of blockstack_resolver
+- Joshua C. Burt - Initial release of openbazaar
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
