@@ -3,6 +3,11 @@ blockstack_resolver CHANGELOG
 
 This file is used to list changes made in each version of the blockstack_resolver cookbook.
 
+0.3.0
+-----
+- defaults to the binary installation unless over-ridden.
+- clean up of code base
+
 0.2.3
 -----
 - Updated the full list of dependencies (and the sub-dependencies) in the documentation.
