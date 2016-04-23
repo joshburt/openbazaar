@@ -60,10 +60,10 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['ob']['deployment_type']</tt></td>
-    <td>String</td>
-    <td>The type of deployment to use. possible values <tt>'source'</tt>, <tt>'binary'</tt></td>
-    <td><tt>'binary'</tt></td>
+    <td><sub><tt>['ob']['deployment_type']</tt></sub></td>
+    <td><sub>String</sub></td>
+    <td><sub>The type of deployment to use. possible values <tt>'source'</tt>, <tt>'binary'</tt></sub></td>
+    <td><sub><tt>'binary'</tt></sub></td>
   </tr>
 </table>  
 
@@ -77,22 +77,22 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['ob']['version']</tt></td>
-    <td>String</td>
-    <td>The version of the binary to download</td>
-    <td><tt>'1.1.2'</tt></td>
+    <td><sub><tt>['ob']['version']</tt></sub></td>
+    <td><sub>String</td></sub>
+    <td><sub>The version of the binary to download</td></sub>
+    <td><sub><tt>'1.1.2'</tt></sub></td>
   </tr>
  <tr>
-    <td><tt>['ob']['checksum']</tt></td>
-    <td>String</td>
-    <td>The checksum of the remote binary artifact</td>
-    <td><tt>'535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'</tt></td>
+    <td><sub><tt>['ob']['checksum']</tt></sub></td>
+    <td><sub>String</td></sub>
+    <td><sub>The checksum of the remote binary artifact</td></sub>
+    <td><sub><tt>'535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'</tt></sub></td>
   </tr>
  <tr>
-    <td><tt>['ob']['source']</tt></td>
-    <td>String</td>
-    <td>The download URL for the binary download</td>
-    <td><tt>'https://github.com/OpenBazaar/OpenBazaar-Installer/releases/download/'</tt></td>
+    <td><sub><tt>['ob']['source']</tt></sub></td>
+    <td><sub>String</td></sub>
+    <td><sub>The download URL for the binary download</td></sub>
+    <td><sub><tt>'https://github.com/OpenBazaar/OpenBazaar-Installer/releases/download/'</tt></sub></td>
   </tr>    
 </table> 
 
@@ -106,94 +106,94 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['source']</tt></td>
-      <td>String</td>
-      <td>Git Repository for OpenBazaar-Server</td>
-      <td><tt>'https://github.com/OpenBazaar/OpenBazaar-Server.git'</tt></td>
+      <td><sub><tt>['ob']['server']['source']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Git Repository for OpenBazaar-Server</td></sub>
+      <td><sub><tt>'https://github.com/OpenBazaar/OpenBazaar-Server.git'</tt></sub></td>
     </tr>
         <tr>
-          <td><tt>['ob']['server']['config']['CONSTANTS']['DATA_FOLDER']</tt></td>
-          <td>String</td>
-          <td>OpenBazaar data folder</td>
-          <td><tt>'/home/openbazaar/.openbazaar'</tt></td>
+          <td><sub><tt>['ob']['server']['config']['CONSTANTS']['DATA_FOLDER']</tt></sub></td>
+          <td><sub>String</td></sub>
+          <td><sub>OpenBazaar data folder</td></sub>
+          <td><sub><tt>'/home/openbazaar/.openbazaar'</tt></sub></td>
         </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['CONSTANTS']['KSIZE']</tt></td>
-      <td>Integer</td>
-      <td>Kademlia Protocol ksize</td>
-      <td><tt>20</tt></td>
+      <td><sub><tt>['ob']['server']['config']['CONSTANTS']['KSIZE']</tt></sub></td>
+      <td><sub>Integer</td></sub>
+      <td><sub>Kademlia Protocol ksize</td></sub>
+      <td><sub><tt>20</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['CONSTANTS']['ALPHA']</tt></td>
-      <td>Integer</td>
-      <td>Kademlia Protocol alpha</td>
-      <td><tt>3</tt></td>
+      <td><sub><tt>['ob']['server']['config']['CONSTANTS']['ALPHA']</tt></sub></td>
+      <td><sub>Integer</td></sub>
+      <td><sub>Kademlia Protocol alpha</td></sub>
+      <td><sub><tt>3</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE']</tt></td>
-      <td>Integer</td>
-      <td>Bitcoin Transaction Fee (in satoshis)</td>
-      <td><tt>15000</tt></td>
+      <td><sub><tt>['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE']</tt></sub></td>
+      <td><sub>Integer</td></sub>
+      <td><sub>Bitcoin Transaction Fee (in satoshis)</td></sub>
+      <td><sub><tt>15000</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['CONSTANTS']['RESOLVER']</tt></td>
-      <td>String</td>
-      <td>BlockStack Resolver API end-point</td>
-      <td><tt>'https://resolver.onename.com/'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['CONSTANTS']['RESOLVER']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>BlockStack Resolver API end-point</td></sub>
+      <td><sub><tt>'https://resolver.onename.com/'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']</tt></td>
-      <td>String</td>
-      <td>Bitcoind RPC Server (1)</td>
-      <td><tt>'tcp://libbitcoin1.openbazaar.org:9091'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Bitcoind RPC Server (1)</td></sub>
+      <td><sub><tt>'tcp://libbitcoin1.openbazaar.org:9091'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']</tt></td>
-      <td>String</td>
-      <td>Bitcoind RPC Server (3)</td>
-      <td><tt>'tcp://libbitcoin3.openbazaar.org:9091'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Bitcoind RPC Server (3)</td></sub>
+      <td><sub><tt>'tcp://libbitcoin3.openbazaar.org:9091'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']</tt></td>
-      <td>String</td>
-      <td>TESTNET Bitcoind RPC Server (2)</td>
-      <td><tt>'tcp://libbitcoin2.openbazaar.org:9091,baihZB[vT(dcVCwkhYLAzah<t2gJ>{3@k?+>T&^3'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>TESTNET Bitcoind RPC Server (2)</td></sub>
+      <td><sub><tt>'tcp://libbitcoin2.openbazaar.org:9091,baihZB[vT(dcVCwkhYLAzah<t2gJ>{3@k?+>T&^3'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']</tt></td>
-      <td>String</td>
-      <td>TESTNET Bitcoind RPC Server (4)</td>
-      <td><tt>'tcp://libbitcoin4.openbazaar.org:9091,<Z&{.=LJSPySefIKgCu99w.L%b^6VvuVp0+pbnOM'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>TESTNET Bitcoind RPC Server (4)</td></sub>
+      <td><sub><tt>'tcp://libbitcoin4.openbazaar.org:9091,<Z&{.=LJSPySefIKgCu99w.L%b^6VvuVp0+pbnOM'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['AUTHENTICATION']['SSL']</tt></td>
-      <td>String</td>
-      <td>Require SSL between the server and client components</td>
-      <td><tt>'False'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['SSL']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Require SSL between the server and client components</td></sub>
+      <td><sub><tt>'False'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['AUTHENTICATION']['SSL_CERT']</tt></td>
-      <td>String</td>
-      <td>The public certificate component to generate (Self Signed)</td>
-      <td><tt>'ob_server_cert.pem'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['SSL_CERT']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>The public certificate component to generate (Self Signed)</td></sub>
+      <td><sub><tt>'ob_server_cert.pem'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['AUTHENTICATION']['SSL_KEY']</tt></td>
-      <td>String</td>
-      <td>The private key for the (Self Signed) certificate to generate</td>
-      <td><tt>'ob_server_cert.key'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['SSL_KEY']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>The private key for the (Self Signed) certificate to generate</td></sub>
+      <td><sub><tt>'ob_server_cert.key'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['AUTHENTICATION']['USERNAME']</tt></td>
-      <td>String</td>
-      <td>The name of the user account (client to server)</td>
-      <td><tt>random changing value (each convergence)</tt></td>
+      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['USERNAME']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>The name of the user account (client to server)</td></sub>
+      <td><sub><tt>random changing value (each convergence)</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['AUTHENTICATION']['PASSWORD']</tt></td>
-      <td>String</td>
-      <td>The password for the user account (client to server)</td>
-      <td><tt>randomly changing value (each convergence)</tt></td>
+      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['PASSWORD']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>The password for the user account (client to server)</td></sub>
+      <td><sub><tt>randomly changing value (each convergence)</tt></sub></td>
     </tr>
 </table>
   
@@ -207,28 +207,28 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
     </tr>
     <tr>
-      <td><tt>['ob']['certificate']['common_name']</tt></td>
-      <td>String</td>
-      <td>Common Name</td>
-      <td><tt>'www.f00bar.com'</tt></td>
+      <td><sub><tt>['ob']['certificate']['common_name']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Common Name</td></sub>
+      <td><sub><tt>'www.f00bar.com'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['certificate']['org']</tt></td>
-      <td>String</td>
-      <td>Organization</td>
-      <td><tt>'Foo Bar'</tt></td>
+      <td><sub><tt>['ob']['certificate']['org']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Organization</td></sub>
+      <td><sub><tt>'Foo Bar'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['certificate']['org_unit']</tt></td>
-      <td>String</td>
-      <td>Organizational Unit</td>
-      <td><tt>'Lab'</tt></td>
+      <td><sub><tt>['ob']['certificate']['org_unit']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Organizational Unit</td></sub>
+      <td><sub><tt>'Lab'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['certificate']['country']</tt></td>
-      <td>String</td>
-      <td>Country</td>
-      <td><tt>'US'</tt></td>
+      <td><sub><tt>['ob']['certificate']['country']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Country</td></sub>
+      <td><sub><tt>'US'</tt></sub></td>
     </tr>            
 </table>
 
@@ -242,22 +242,22 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']</tt></td>
-      <td>String</td>
-      <td>Seed Server (2)</td>
-      <td><tt>'seed2.openbazaar.org:8080,8b17082a57d648894a5181cb6e1b8a6f5b3b7e1c347c0671abfcd7deb6f105fe'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Seed Server (2)</td></sub>
+      <td><sub><tt>'seed2.openbazaar.org:8080,8b17082a57d648894a5181cb6e1b8a6f5b3b7e1c347c0671abfcd7deb6f105fe'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed3']</tt></td>
-      <td>String</td>
-      <td>Seed Server (3)</td>
-      <td><tt>'seed.obcentral.org:8080,f0ff751b27ddaa86a075aa09785c438cd2cebadb8f0f5a7e16f383911322d4ee'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed3']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Seed Server (3)</td></sub>
+      <td><sub><tt>'seed.obcentral.org:8080,f0ff751b27ddaa86a075aa09785c438cd2cebadb8f0f5a7e16f383911322d4ee'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['TESTNET_SEEDS']['testnet_seed1']</tt></td>
-      <td>String</td>
-      <td>TESTNET Seed Sever (1)</td>
-      <td><tt>'seed.openbazaar.org:8080,5b44be5c18ced1bc9400fe5e79c8ab90204f06bebacc04dd9c70a95eaca6e117'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['TESTNET_SEEDS']['testnet_seed1']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>TESTNET Seed Sever (1)</td></sub>
+      <td><sub><tt>'seed.openbazaar.org:8080,5b44be5c18ced1bc9400fe5e79c8ab90204f06bebacc04dd9c70a95eaca6e117'</tt></sub></td>
     </tr>        
 </table>
 
@@ -271,16 +271,16 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['ob_service_user']</tt></td>
-      <td>String</td>
-      <td>Name of the service account to run the daemons under</td>
-      <td><tt>'openbazaar'</tt></td>
+      <td><sub><tt>['ob']['server']['ob_service_user']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Name of the service account to run the daemons under</td></sub>
+      <td><sub><tt>'openbazaar'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['ob_service_group']</tt></td>
-      <td>String</td>
-      <td>Name of the group account to run the daemons under</td>
-      <td><tt>'openbazaar'</tt></td>
+      <td><sub><tt>['ob']['server']['ob_service_group']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Name of the group account to run the daemons under</td></sub>
+      <td><sub><tt>'openbazaar'</tt></sub></td>
     </tr>    
 </table>
 
@@ -294,10 +294,10 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['allowed_admin_ip']</tt></td>
-      <td>String</td>
-      <td>Allowed IP address for remote administration</td>
-      <td><tt>'127.0.0.1'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['allowed_admin_ip']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Allowed IP address for remote administration</td></sub>
+      <td><sub><tt>'127.0.0.1'</tt></sub></td>
     </tr>
 </table>
 
@@ -311,10 +311,10 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['additional_flags']</tt></td>
-      <td>String</td>
-      <td>Catch-all for any additional options that need to be passed to the daemons commandline arguments</td>
-      <td><tt>''</tt></td>
+      <td><sub><tt>['ob']['server']['config']['additional_flags']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Catch-all for any additional options that need to be passed to the daemons commandline arguments</td></sub>
+      <td><sub><tt>''</tt></sub></td>
     </tr>
 </table>
 
@@ -328,40 +328,40 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
     <th>Default</th>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['ports']['dht']</tt></td>
-      <td>String</td>
-      <td>Port used for DHT</td>
-      <td><tt>'18467'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['ports']['dht']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Port used for DHT</td></sub>
+      <td><sub><tt>'18467'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['ports']['testnet_dht']</tt></td>
-      <td>String</td>
-      <td>Port used for TESTNET DHT</td>
-      <td><tt>'28467'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['ports']['testnet_dht']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Port used for TESTNET DHT</td></sub>
+      <td><sub><tt>'28467'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['ports']['rest']</tt></td>
-      <td>String</td>
-      <td>Port used for RESET API</td>
-      <td><tt>'18469'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['ports']['rest']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Port used for RESET API</td></sub>
+      <td><sub><tt>'18469'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['ports']['websocket']</tt></td>
-      <td>String</td>
-      <td>Port used for websocket</td>
-      <td><tt>'18466'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['ports']['websocket']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Port used for websocket</td></sub>
+      <td><sub><tt>'18466'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['ports']['heartbeat']</tt></td>
-      <td>String</td>
-      <td>Port used for heartbeat</td>
-      <td><tt>'18470'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['ports']['heartbeat']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Port used for heartbeat</td></sub>
+      <td><sub><tt>'18470'</tt></sub></td>
     </tr>
     <tr>
-      <td><tt>['ob']['server']['config']['ports']['seed']</tt></td>
-      <td>String</td>
-      <td>Port use for seed server connections</td>
-      <td><tt>'8080'</tt></td>
+      <td><sub><tt>['ob']['server']['config']['ports']['seed']</tt></sub></td>
+      <td><sub>String</td></sub>
+      <td><sub>Port use for seed server connections</td></sub>
+      <td><sub><tt>'8080'</tt></sub></td>
     </tr>                    
 </table>
 
