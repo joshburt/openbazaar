@@ -29,7 +29,7 @@ default['ob']['server']['source'] = 'https://github.com/OpenBazaar/OpenBazaar-Se
 default['ob']['server']['config']['CONSTANTS']['DATA_FOLDER'] = '/home/openbazaar/.openbazaar'
 default['ob']['server']['config']['CONSTANTS']['KSIZE'] = 20
 default['ob']['server']['config']['CONSTANTS']['ALPHA'] = 3
-default['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE'] = 15000
+default['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE'] = 15_000
 default['ob']['server']['config']['CONSTANTS']['RESOLVER'] = 'https://resolver.onename.com/'
 
 # [LIBBITCOIN_SERVERS]
