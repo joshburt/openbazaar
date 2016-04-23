@@ -3,12 +3,12 @@ blockstack_resolver CHANGELOG
 
 This file is used to list changes made in each version of the blockstack_resolver cookbook.
 
-0.1.1
+0.2.3
 -----
 - Updated the full list of dependencies (and the sub-dependencies) in the documentation.
 - Added some project related support files
 
-0.1.0
+0.2.2
 -----
 - Joshua C. Burt - Initial release of blockstack_resolver
 
