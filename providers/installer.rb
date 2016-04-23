@@ -60,7 +60,6 @@ end
 # Applies our primary configuration to the instance
 ###############################################################################
 action :configure do
-
   directory ob_server_ssl_dir do
     recursive true
     action :create
