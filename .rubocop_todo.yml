@@ -44,14 +44,6 @@ Style/Documentation:
     - 'libraries/config_helper.rb'
     - 'libraries/source_helper.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
-# SupportedStyles: consistent, special_for_inner_method_call, special_for_inner_method_call_in_parentheses
-Style/FirstParameterIndentation:
-  Exclude:
-    - 'providers/installer.rb'
-
 # Offense count: 3
 Style/IfInsideElse:
   Exclude:

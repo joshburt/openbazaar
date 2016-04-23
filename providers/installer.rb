@@ -82,28 +82,28 @@ action :configure do
   template ob_cfg_path do
     source 'ob.cfg.erb'
     variables(
-        CONSTANTS_DATA_FOLDER: ob_server_config_constants_data_folder,
-        CONSTANTS_KSIZE: ob_server_config_constants_ksize,
-        CONSTANTS_ALPHA: ob_server_config_constants_alpha,
-        CONSTANTS_TRANSACTION_FEE: ob_server_config_constants_transaction_fee,
-        CONSTANTS_RESOLVER: ob_server_config_constants_resolver,
+      CONSTANTS_DATA_FOLDER: ob_server_config_constants_data_folder,
+      CONSTANTS_KSIZE: ob_server_config_constants_ksize,
+      CONSTANTS_ALPHA: ob_server_config_constants_alpha,
+      CONSTANTS_TRANSACTION_FEE: ob_server_config_constants_transaction_fee,
+      CONSTANTS_RESOLVER: ob_server_config_constants_resolver,
 
-        LIBBITCOIN_SERVERS_mainnet_server1: ob_server_config_libbitcoin_servers_mainnet_server1,
-        LIBBITCOIN_SERVERS_mainnet_server3: ob_server_config_libbitcoin_servers_mainnet_server3,
+      LIBBITCOIN_SERVERS_mainnet_server1: ob_server_config_libbitcoin_servers_mainnet_server1,
+      LIBBITCOIN_SERVERS_mainnet_server3: ob_server_config_libbitcoin_servers_mainnet_server3,
 
-        LIBBITCOIN_SERVERS_TESTNET_testnet_server2: ob_server_config_libbitcoin_servers_testnet_testnet_server2,
-        LIBBITCOIN_SERVERS_TESTNET_testnet_server4: ob_server_config_libbitcoin_servers_testnet_testnet_server4,
+      LIBBITCOIN_SERVERS_TESTNET_testnet_server2: ob_server_config_libbitcoin_servers_testnet_testnet_server2,
+      LIBBITCOIN_SERVERS_TESTNET_testnet_server4: ob_server_config_libbitcoin_servers_testnet_testnet_server4,
 
-        AUTHENTICATION_SSL: ob_server_config_authenication_ssl,
-        AUTHENTICATION_SSL_CERT: ob_server_config_authenication_ssl_cert,
-        AUTHENTICATION_SSL_KEY: ob_server_config_authenication_ssl_key,
-        AUTHENTICATION_USERNAME: ob_server_config_authenication_username,
-        AUTHENTICATION_PASSWORD: ob_server_config_authenication_password,
+      AUTHENTICATION_SSL: ob_server_config_authenication_ssl,
+      AUTHENTICATION_SSL_CERT: ob_server_config_authenication_ssl_cert,
+      AUTHENTICATION_SSL_KEY: ob_server_config_authenication_ssl_key,
+      AUTHENTICATION_USERNAME: ob_server_config_authenication_username,
+      AUTHENTICATION_PASSWORD: ob_server_config_authenication_password,
 
-        MAINNET_SEEDS_mainnet_seed2: ob_server_config_mainnet_seeds_mainnet_seed2,
-        MAINNET_SEEDS_mainnet_seed3: ob_server_config_mainnet_seeds_mainnet_seed3,
+      MAINNET_SEEDS_mainnet_seed2: ob_server_config_mainnet_seeds_mainnet_seed2,
+      MAINNET_SEEDS_mainnet_seed3: ob_server_config_mainnet_seeds_mainnet_seed3,
 
-        TESTNET_SEEDS_testnet_seed1: ob_server_config_testnet_seeds_testnet_seed1
+      TESTNET_SEEDS_testnet_seed1: ob_server_config_testnet_seeds_testnet_seed1
     )
   end
 end
