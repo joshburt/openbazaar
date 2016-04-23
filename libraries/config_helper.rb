@@ -623,6 +623,7 @@ module OpenBazaar
     end
 
     private
+
     def load_ob_config
       databag_exists?(node.chef_environment, 'ob') ? data_bag_item(node.chef_environment, 'ob') : nil
     end

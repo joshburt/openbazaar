@@ -61,6 +61,7 @@ module OpenBazaar
     end
 
     private
+
     def ob_data
       @ob_data ||= get_ob_data
     end
