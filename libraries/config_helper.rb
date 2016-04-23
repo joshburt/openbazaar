@@ -6,7 +6,6 @@
 
 module OpenBazaar
   module ConfigHelper
-
     def deployment_type
       # default value
       return_value = node['ob']['deployment_type']
@@ -641,6 +640,5 @@ module OpenBazaar
       end
       return_value
     end
-
   end
 end
