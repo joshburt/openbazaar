@@ -6,4 +6,3 @@
 
 actions :download, :install, :configure
 default_action :download
-
