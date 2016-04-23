@@ -567,9 +567,7 @@ module OpenBazaar
       else
         server_exec = "python #{ob_server_base_dir}/openbazaard.py"
       end
-    "#{server_exec}"\
-      ' start'\
-      ' --daemon'\
+    "#{server_exec} start --daemon"\
       " --port #{ob_server_dht_port}"\
       " --allowip #{ob_server_allowed_admin_ip}"\
       " --restapiport #{ob_server_rest_port}"\
@@ -602,9 +600,7 @@ module OpenBazaar
       #    -p PORT, --port PORT  set the http port
       #########################################################################
       server_exec = "python #{ob_server_base_dir}/httpseed.py"
-      "#{server_exec}"\
-      ' start'\
-      ' --daemon'\
+      "#{server_exec} start --daemon"\
       " --port #{ob_server_seed_port}"\
       " #{ob_server_additional_flags}"
     end
