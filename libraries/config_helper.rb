@@ -635,10 +635,7 @@ module OpenBazaar
       if Chef::DataBag.list.key?(databag_name)
         mybag = Chef::DataBag.load(databag_name)
         myhash = mybag.to_hash
-        if myhash[databag_item]
-          return_value = true
-        else
-        end
+        return_value = true if myhash[databag_item]
       end
       return_value
     end
