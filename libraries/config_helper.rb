@@ -61,7 +61,7 @@ module OpenBazaar
         end
       end
       return_value
-   end
+    end
 
     def ob_server_dht_port
       # default value
