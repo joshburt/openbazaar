@@ -5,10 +5,13 @@ rvm:
 install:
 - gem install foodcritic
 - gem install rubocop
+= gem install berkshelf
 - gem install chef-zero
 - gem install chefspec
 
 script:
-- foodcritic .
+- foodcritic --version
+- foodcritic . --context --epic-fail -X spec
+- rubocop --version
 - rubocop
 - rspec
