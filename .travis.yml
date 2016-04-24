@@ -2,12 +2,10 @@ language: ruby
 rvm:
   - 2.0
 
-before_install:
-- sudo apt-get update -qq
-
 install:
 - gem install foodcritic
 - gem install rubocop
+- gem install chef-zero
 - gem install chefspec
 
 script:
