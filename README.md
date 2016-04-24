@@ -61,11 +61,9 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 * node`['ob']['version']`
   * version of the binary to download
   * default is `'1.1.2'`
-
 * node`['ob']['checksum']`
   * checksum of the remote binary artifact
   * default is `'535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'`
-
 * node`['ob']['source']`
   * download URL for the binary download
   * default is `'https://github.com/OpenBazaar/OpenBazaar-Installer/releases/download/'`
