@@ -3,6 +3,10 @@ OpenBazaar Cookbook CHANGELOG
 
 This file is used to list changes made in each version of the openbazaar cookbook.
 
+0.3.11
+------
+- travis-ci integration
+
 0.3.10
 ------
 - rubocop updates

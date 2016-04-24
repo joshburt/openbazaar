@@ -1,5 +1,7 @@
 OpenBazaar Cookbook
 ===================
+[![Build Status](https://travis-ci.org/joshburt/openbazaar.svg?branch=master)](https://travis-ci.org/joshburt/openbazaar)
+
 This cookbook installs, configures, and maintains the OpenBazaar server components.
 
 Features
