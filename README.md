@@ -73,59 +73,45 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 * node`['ob']['server']['source']`
   * git repository for OpenBazaar-Server
   * default is `'https://github.com/OpenBazaar/OpenBazaar-Server.git'`
-
 * node`['ob']['server']['config']['CONSTANTS']['DATA_FOLDER']`
   * OpenBazaar data folder
   * default is `'/home/openbazaar/.openbazaar'`
-
 * node`['ob']['server']['config']['CONSTANTS']['KSIZE']`
   * Kademlia Protocol ksize
   * default is `20`
-
 * node`['ob']['server']['config']['CONSTANTS']['ALPHA']`
   * Kademlia Protocol alpha
   * default is `3`
-
 * node`['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE']`
   * bitcoin transaction fee (in satoshis)
   * default is `15000`
-
 * node`['ob']['server']['config']['CONSTANTS']['RESOLVER']`
   * BlockStack Resolver API end-point
   * default is `'https://resolver.onename.com/'`
-
 * node`['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']`
   * bitcoind RPC server (1)
   * default is `'tcp://libbitcoin1.openbazaar.org:9091'`
-
 * node`['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']`
   * bitcoind RPC server (3)
   * default is `'tcp://libbitcoin3.openbazaar.org:9091'`
-
 * node`['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']`
   * TESTNET bitcoind RPC Server (2)
   * default is `'tcp://libbitcoin2.openbazaar.org:9091,baihZB[vT(dcVCwkhYLAzah<t2gJ>{3@k?+>T&^3'`
-
 * node`['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']`
   * TESTNET bitcoind RPC Server (4)
   * default is `'tcp://libbitcoin4.openbazaar.org:9091,<Z&{.=LJSPySefIKgCu99w.L%b^6VvuVp0+pbnOM'`
-
 * node`['ob']['server']['config']['AUTHENTICATION']['SSL']`
   * require SSL between the server and client components
   * default is `'False'`
-
 * node`['ob']['server']['config']['AUTHENTICATION']['SSL_CERT']`
   * public certificate component to generate (self signed)
   * default is `'ob_server_cert.pem'`
-
 * node`['ob']['server']['config']['AUTHENTICATION']['SSL_KEY']`
   * private key for the (self signed) certificate to generate
   * default is `'ob_server_cert.key'`
-
 * node`['ob']['server']['config']['AUTHENTICATION']['USERNAME']`
   * name of the user account (client to server)
   * default is a random changing value (each convergence)
-
 * node`['ob']['server']['config']['AUTHENTICATION']['PASSWORD']`
   * password for the user account (client to server)
   * default is randomly changing value (each convergence)
@@ -136,15 +122,12 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 * node`['ob']['certificate']['common_name']` - 
   * Common Name
   * default is `'www.f00bar.com'`
-
 * node`['ob']['certificate']['org']` - 
   * Organization
   * default is `'Foo Bar'`
-
 * node`['ob']['certificate']['org_unit']` - 
   * Organizational Unit
   * default is `'Lab'`
-
 * node`['ob']['certificate']['country']` - 
   * Country
   * default is `'US'`
@@ -154,11 +137,9 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 * node`['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']`
   * Seed Server (2)
   * default is `'seed2.openbazaar.org:8080,8b17082a57d648894a5181cb6e1b8a6f5b3b7e1c347c0671abfcd7deb6f105fe'`
-
 * node`['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed3']`
   * Seed Server (3)
   * default is `'seed.obcentral.org:8080,f0ff751b27ddaa86a075aa09785c438cd2cebadb8f0f5a7e16f383911322d4ee'`
-
 * node`['ob']['server']['config']['TESTNET_SEEDS']['testnet_seed1']`
   * TESTNET Seed Sever (1)
   * default is `'seed.openbazaar.org:8080,5b44be5c18ced1bc9400fe5e79c8ab90204f06bebacc04dd9c70a95eaca6e117'`
@@ -168,7 +149,6 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 * node`['ob']['server']['ob_service_user']`
   * name of the service account to run the daemons under 
   * default is `'openbazaar'`
-
 * node`['ob']['server']['ob_service_group']`
   * name of the group account to run the daemons under 
   * default is `'openbazaar'`
@@ -190,23 +170,18 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 * node`['ob']['server']['config']['ports']['dht']`
   * port used for DHT
   * default is `'18467'`
-
 * node`['ob']['server']['config']['ports']['testnet_dht']`
   * port used for TESTNET DHT
   * default is `'28467'`
-
 * node`['ob']['server']['config']['ports']['rest']`
   * port used for RESET API
   * default is `'18469'`
-
 * node`['ob']['server']['config']['ports']['websocket']`
   * port used for websocket
   * default is `'18466'`
-
 * node`['ob']['server']['config']['ports']['heartbeat']`
   * port used for heartbeat
   * default is `'18470'`
-
 * node`['ob']['server']['config']['ports']['seed']`
   * port use for seed server connections
   * default is `'8080'`
