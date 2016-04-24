@@ -1,0 +1,14 @@
+language: ruby
+
+before_install:
+- sudo apt-get update -qq
+
+install:
+- gem install foodcritic
+- gem install rubocop
+- gem install chefspec
+
+script:
+- foodcritic .
+- rubocop
+- rspec
