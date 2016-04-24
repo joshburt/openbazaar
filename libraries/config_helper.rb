@@ -405,7 +405,6 @@ module OpenBazaar
         myhash = mybag.to_hash
         if myhash[databag_item]
           return_value = true
-        else
         end
       end
       return_value
