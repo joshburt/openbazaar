@@ -210,7 +210,7 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
   * port used for heartbeat
   * default is `'18470'`
 
-- node`['ob']['server']['config']['ports']['seed']`
+* node`['ob']['server']['config']['ports']['seed']`
   * port use for seed server connections
   * default is `'8080'`
 
