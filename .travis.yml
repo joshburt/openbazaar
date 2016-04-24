@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 2.1
+
+install:
+- gem install foodcritic
+- gem install rubocop
+- gem install berkshelf
+- gem install chef-zero
+- gem install chefspec
+
+script:
+- foodcritic --version
+- foodcritic . --context --epic-fail any --exclude spec/
+- rubocop --version
+- rubocop
+- rspec
