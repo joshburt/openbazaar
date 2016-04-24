@@ -11,7 +11,7 @@ install:
 
 script:
 - foodcritic --version
-- foodcritic . --context --epic-fail -X spec
+- foodcritic . --context --epic-fail any -X ./spec
 - rubocop --version
 - rubocop
 - rspec
