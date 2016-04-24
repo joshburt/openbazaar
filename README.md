@@ -9,7 +9,7 @@ Features
 - Supports installation of a standard OpenBazaar server
 - Supports the installation of an OpenBazaar seed server
 - Installs the services as daemons
-- Enables autostarting of daemons
+- Enables auto-starting of daemons
 - Creates a self-signed SSL certificate for secure client to server communications
 - Updates source distributions from git repositories on each chef run (keeps it up to date)
 
