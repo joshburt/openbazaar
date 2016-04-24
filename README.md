@@ -52,324 +52,174 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 
 **OpenBazaar Installation Flavor Configuration**
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><sub><tt>['ob']['deployment_type']</tt></sub></td>
-    <td><sub>String</sub></td>
-    <td><sub>The type of deployment to use. possible values <tt>'source'</tt>, <tt>'binary'</tt></sub></td>
-    <td><sub><tt>'binary'</tt></sub></td>
-  </tr>
-</table>  
+- node`['ob']['deployment_type']`
+the type of deployment to use. possible values `'source'`, `'binary'`
+default is `'binary'`
 
 **Binary Deployment Type Configuration**
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><sub><tt>['ob']['version']</tt></sub></td>
-    <td><sub>String</td></sub>
-    <td><sub>The version of the binary to download</td></sub>
-    <td><sub><tt>'1.1.2'</tt></sub></td>
-  </tr>
- <tr>
-    <td><sub><tt>['ob']['checksum']</tt></sub></td>
-    <td><sub>String</td></sub>
-    <td><sub>The checksum of the remote binary artifact</td></sub>
-    <td><sub><tt>'535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'</tt></sub></td>
-  </tr>
- <tr>
-    <td><sub><tt>['ob']['source']</tt></sub></td>
-    <td><sub>String</td></sub>
-    <td><sub>The download URL for the binary download</td></sub>
-    <td><sub><tt>'https://github.com/OpenBazaar/OpenBazaar-Installer/releases/download/'</tt></sub></td>
-  </tr>    
-</table> 
+- node`['ob']['version']`
+version of the binary to download.
+default is `'1.1.2'`
+
+- node`['ob']['checksum']`
+checksum of the remote binary artifact
+default is `'535e67eadd4e044e7c34c0ce056c244c74d0eb18dd7383c38666c14e6987186d'`
+
+- node`['ob']['source']`
+download URL for the binary download
+default is `'https://github.com/OpenBazaar/OpenBazaar-Installer/releases/download/'`
 
 **Source Deployment Type Configuration**
 
-<table>
-    <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['source']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Git Repository for OpenBazaar-Server</td></sub>
-      <td><sub><tt>'https://github.com/OpenBazaar/OpenBazaar-Server.git'</tt></sub></td>
-    </tr>
-        <tr>
-          <td><sub><tt>['ob']['server']['config']['CONSTANTS']['DATA_FOLDER']</tt></sub></td>
-          <td><sub>String</td></sub>
-          <td><sub>OpenBazaar data folder</td></sub>
-          <td><sub><tt>'/home/openbazaar/.openbazaar'</tt></sub></td>
-        </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['CONSTANTS']['KSIZE']</tt></sub></td>
-      <td><sub>Integer</td></sub>
-      <td><sub>Kademlia Protocol ksize</td></sub>
-      <td><sub><tt>20</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['CONSTANTS']['ALPHA']</tt></sub></td>
-      <td><sub>Integer</td></sub>
-      <td><sub>Kademlia Protocol alpha</td></sub>
-      <td><sub><tt>3</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE']</tt></sub></td>
-      <td><sub>Integer</td></sub>
-      <td><sub>Bitcoin Transaction Fee (in satoshis)</td></sub>
-      <td><sub><tt>15000</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['CONSTANTS']['RESOLVER']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>BlockStack Resolver API end-point</td></sub>
-      <td><sub><tt>'https://resolver.onename.com/'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Bitcoind RPC Server (1)</td></sub>
-      <td><sub><tt>'tcp://libbitcoin1.openbazaar.org:9091'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Bitcoind RPC Server (3)</td></sub>
-      <td><sub><tt>'tcp://libbitcoin3.openbazaar.org:9091'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>TESTNET Bitcoind RPC Server (2)</td></sub>
-      <td><sub><tt>'tcp://libbitcoin2.openbazaar.org:9091,baihZB[vT(dcVCwkhYLAzah<t2gJ>{3@k?+>T&^3'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>TESTNET Bitcoind RPC Server (4)</td></sub>
-      <td><sub><tt>'tcp://libbitcoin4.openbazaar.org:9091,<Z&{.=LJSPySefIKgCu99w.L%b^6VvuVp0+pbnOM'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['SSL']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Require SSL between the server and client components</td></sub>
-      <td><sub><tt>'False'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['SSL_CERT']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>The public certificate component to generate (Self Signed)</td></sub>
-      <td><sub><tt>'ob_server_cert.pem'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['SSL_KEY']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>The private key for the (Self Signed) certificate to generate</td></sub>
-      <td><sub><tt>'ob_server_cert.key'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['USERNAME']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>The name of the user account (client to server)</td></sub>
-      <td><sub><tt>random changing value (each convergence)</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['AUTHENTICATION']['PASSWORD']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>The password for the user account (client to server)</td></sub>
-      <td><sub><tt>randomly changing value (each convergence)</tt></sub></td>
-    </tr>
-</table>
-  
+- node`['ob']['server']['source']`
+git repository for OpenBazaar-Server
+default is `'https://github.com/OpenBazaar/OpenBazaar-Server.git'`
+
+- node`['ob']['server']['config']['CONSTANTS']['DATA_FOLDER']`
+OpenBazaar data folder
+default is `'/home/openbazaar/.openbazaar'`
+
+- node`['ob']['server']['config']['CONSTANTS']['KSIZE']`
+Kademlia Protocol ksize
+default is `20`
+
+- node`['ob']['server']['config']['CONSTANTS']['ALPHA']`
+Kademlia Protocol alpha
+default is `3`
+
+- node`['ob']['server']['config']['CONSTANTS']['TRANSACTION_FEE']`
+bitcoin transaction fee (in satoshis)
+default is `15000`
+
+- node`['ob']['server']['config']['CONSTANTS']['RESOLVER']`
+BlockStack Resolver API end-point
+default is `'https://resolver.onename.com/'`
+
+- node`['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server1']`
+bitcoind RPC server (1)
+default is `'tcp://libbitcoin1.openbazaar.org:9091'`
+
+- node`['ob']['server']['config']['LIBBITCOIN_SERVERS']['mainnet_server3']`
+bitcoind RPC server (3)
+default is `'tcp://libbitcoin3.openbazaar.org:9091'`
+
+- node`['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server2']`
+TESTNET bitcoind RPC Server (2)
+<sub>default is `'tcp://libbitcoin2.openbazaar.org:9091,baihZB[vT(dcVCwkhYLAzah<t2gJ>{3@k?+>T&^3'`</sub>
+
+- node`['ob']['server']['config']['LIBBITCOIN_SERVERS_TESTNET']['testnet_server4']`
+TESTNET bitcoind RPC Server (4)
+<sub>default is `'tcp://libbitcoin4.openbazaar.org:9091,<Z&{.=LJSPySefIKgCu99w.L%b^6VvuVp0+pbnOM'`</sub>
+
+- node`['ob']['server']['config']['AUTHENTICATION']['SSL']`
+require SSL between the server and client components
+default is `'False'`
+
+- node`['ob']['server']['config']['AUTHENTICATION']['SSL_CERT']`
+public certificate component to generate (self signed)
+default is `'ob_server_cert.pem'`
+
+- node`['ob']['server']['config']['AUTHENTICATION']['SSL_KEY']`
+private key for the (self signed) certificate to generate
+default is `'ob_server_cert.key'`
+
+- node`['ob']['server']['config']['AUTHENTICATION']['USERNAME']`
+name of the user account (client to server)
+default is a random changing value (each convergence)
+
+- node`['ob']['server']['config']['AUTHENTICATION']['PASSWORD']`
+password for the user account (client to server)
+default is randomly changing value (each convergence)
+
+
 **SSL Certification Configuration**
 
-<table>
-    <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['certificate']['common_name']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Common Name</td></sub>
-      <td><sub><tt>'www.f00bar.com'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['certificate']['org']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Organization</td></sub>
-      <td><sub><tt>'Foo Bar'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['certificate']['org_unit']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Organizational Unit</td></sub>
-      <td><sub><tt>'Lab'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['certificate']['country']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Country</td></sub>
-      <td><sub><tt>'US'</tt></sub></td>
-    </tr>            
-</table>
+- node`['ob']['certificate']['common_name']` - 
+Common Name
+default is `'www.f00bar.com'`
+
+- node`['ob']['certificate']['org']` - 
+Organization
+default is `'Foo Bar'`
+
+- node`['ob']['certificate']['org_unit']` - 
+Organizational Unit
+default is `'Lab'`
+
+- node`['ob']['certificate']['country']` - 
+Country
+default is `'US'`
 
 **OpenBazaar Remote Seed Server Configuration**
 
-<table>
-    <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Seed Server (2)</td></sub>
-      <td><sub><tt>'seed2.openbazaar.org:8080,8b17082a57d648894a5181cb6e1b8a6f5b3b7e1c347c0671abfcd7deb6f105fe'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed3']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Seed Server (3)</td></sub>
-      <td><sub><tt>'seed.obcentral.org:8080,f0ff751b27ddaa86a075aa09785c438cd2cebadb8f0f5a7e16f383911322d4ee'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['TESTNET_SEEDS']['testnet_seed1']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>TESTNET Seed Sever (1)</td></sub>
-      <td><sub><tt>'seed.openbazaar.org:8080,5b44be5c18ced1bc9400fe5e79c8ab90204f06bebacc04dd9c70a95eaca6e117'</tt></sub></td>
-    </tr>        
-</table>
+- node`['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed2']`
+Seed Server (2)
+<sub>default is `'seed2.openbazaar.org:8080,8b17082a57d648894a5181cb6e1b8a6f5b3b7e1c347c0671abfcd7deb6f105fe'`</sub>
+
+- node`['ob']['server']['config']['MAINNET_SEEDS']['mainnet_seed3']`
+Seed Server (3)
+<sub>default is `'seed.obcentral.org:8080,f0ff751b27ddaa86a075aa09785c438cd2cebadb8f0f5a7e16f383911322d4ee'`</sub>
+
+- node`['ob']['server']['config']['TESTNET_SEEDS']['testnet_seed1']`
+TESTNET Seed Sever (1)
+<sub>default is `'seed.openbazaar.org:8080,5b44be5c18ced1bc9400fe5e79c8ab90204f06bebacc04dd9c70a95eaca6e117'`</sub>
 
 **OpenBazaar Service Account Configuration**
 
-<table>
-    <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['ob_service_user']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Name of the service account to run the daemons under</td></sub>
-      <td><sub><tt>'openbazaar'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['ob_service_group']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Name of the group account to run the daemons under</td></sub>
-      <td><sub><tt>'openbazaar'</tt></sub></td>
-    </tr>    
-</table>
+- node`['ob']['server']['ob_service_user']`
+name of the service account to run the daemons under 
+default is `'openbazaar'`
+
+- node`['ob']['server']['ob_service_group']`
+name of the group account to run the daemons under 
+default is `'openbazaar'`
 
 **OpenBazaar Remote Administration Configuration**
 
-<table>
-    <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['allowed_admin_ip']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Allowed IP address for remote administration</td></sub>
-      <td><sub><tt>'127.0.0.1'</tt></sub></td>
-    </tr>
-</table>
+- node`['ob']['server']['config']['allowed_admin_ip']`
+allowed IP address for remote administration
+default is `'127.0.0.1'`
 
 **OpenBazaar Additional Command Line Options**
 
-<table>
-    <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['additional_flags']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Catch-all for any additional options that need to be passed to the daemons commandline arguments</td></sub>
-      <td><sub><tt>''</tt></sub></td>
-    </tr>
-</table>
+- node`['ob']['server']['config']['additional_flags']`
+catch-all for any additional options that need to be passed to the daemons commandline arguments
+default is `''`
 
 **OpenBazaar Server Port Configuration** 
 
-<table>
-    <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['ports']['dht']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Port used for DHT</td></sub>
-      <td><sub><tt>'18467'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['ports']['testnet_dht']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Port used for TESTNET DHT</td></sub>
-      <td><sub><tt>'28467'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['ports']['rest']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Port used for RESET API</td></sub>
-      <td><sub><tt>'18469'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['ports']['websocket']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Port used for websocket</td></sub>
-      <td><sub><tt>'18466'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['ports']['heartbeat']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Port used for heartbeat</td></sub>
-      <td><sub><tt>'18470'</tt></sub></td>
-    </tr>
-    <tr>
-      <td><sub><tt>['ob']['server']['config']['ports']['seed']</tt></sub></td>
-      <td><sub>String</td></sub>
-      <td><sub>Port use for seed server connections</td></sub>
-      <td><sub><tt>'8080'</tt></sub></td>
-    </tr>                    
-</table>
+- node`['ob']['server']['config']['ports']['dht']`
+port used for DHT
+default is `'18467'`
+
+- node`['ob']['server']['config']['ports']['testnet_dht']`
+port used for TESTNET DHT
+default is `'28467'`
+
+- node`['ob']['server']['config']['ports']['rest']`
+port used for RESET API
+default is `'18469'`
+
+- node`['ob']['server']['config']['ports']['websocket']`
+port used for websocket
+default is `'18466'`
+
+- node`['ob']['server']['config']['ports']['heartbeat']`
+port used for heartbeat
+default is `'18470'`
+
+- node`['ob']['server']['config']['ports']['seed']`
+port use for seed server connections
+default is `'8080'`
+
 
 Configuration
 -------------
 Attributes may be over-ridden in the normal node/role/environment level attribute `override_attributes`.
 
-Additionally if one exists a data bag definition will take precedence over any above attribute declarations.  The data bag items can over-ride all or portions of the node level attributes.
+Additionally, if one exists, a data bag item  definition will take precedence over any above attribute declarations.  The data bag item can over-ride all -or- portions of the node level attributes.
+
 The data bag item is configured to be `{CHEF ENVIRONMENT}\ob`
 
 **Example**
@@ -448,7 +298,7 @@ In addition to the non-secure attributes noted so far there are several encrypte
 
 `Failure to create these credentials will result in randomly generate values being supplied to the ob.cfg for the username and password on every chef run.`
 
-The encrypted data bag item is configured to be `{CHEF ENVIRONMENT}\ob_secrets`.
+The encrypted data bag item is configured to be `{CHEF ENVIRONMENT}\ob_secrets`
 
 **Example**
 
@@ -470,11 +320,11 @@ The encrypted data bag item is configured to be `{CHEF ENVIRONMENT}\ob_secrets`.
 Usage
 -----
 #### openbazaar::default
-Downloads, compiles, and installs OpenBazaar and dependencies.
+Downloads, compiles [for source deployments], and installs OpenBazaar and dependencies.
 
 Just include `openbazaar` in your node's `run_list`:
 
-**Exmaple Runlist**
+**Example Runlist**
 
 ```json
 {
@@ -486,8 +336,7 @@ Just include `openbazaar` in your node's `run_list`:
 ```
 
 #### openbazaar::server
-Configures an OpenBazaar Server to run under a service account as a daemon.
-This includes autostarting with the system.
+Configures an OpenBazaar Server to run under a service account as a daemon. This includes autostarting with the system.
 
 **Example Role**
 
@@ -506,8 +355,7 @@ This includes autostarting with the system.
 ```
 
 #### openbazaar::seed
-Configures an OpenBazaar Seed Server to run under a service account as a daemon.
-This includes autostarting with the system.
+Configures an OpenBazaar Seed Server to run under a service account as a daemon. This includes autostarting with the system.
 
 **Example Role**
 
