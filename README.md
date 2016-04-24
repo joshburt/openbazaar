@@ -189,13 +189,38 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 
 Configuration
 -------------
+
+### By Native Node Attributes
+
 Attributes may be over-ridden in the normal node/role/environment level attribute `override_attributes`.
 
-Additionally, if one exists, a data bag item  definition will take precedence over any above attribute declarations.  The data bag item can over-ride all -or- portions of the node level attributes.
+**Attribute Example**
+
+Installs from source with custom SSL certificate fields.
+
+```json
+{
+  "override_attributes": {
+    "ob": {
+      "deployment_type" : "source",
+      "certificate" : {
+        "common_name" : "my.coolcompany.com",
+        "org" : "My Cool Company",
+        "org_unit" : "ENG",
+        "country" : "US"
+      }
+    }
+  }
+}
+```
+
+### By Data Bag Items
+
+If one exists, a data bag item  definition will take precedence over any above attribute declarations.  The data bag item can over-ride all -or- portions of the node level attributes.
 
 The data bag item is configured to be `{CHEF ENVIRONMENT}\ob`
 
-**Example**
+**Data Bag Example**
 
 ```json
 {
@@ -287,6 +312,27 @@ The encrypted data bag item is configured to be `{CHEF ENVIRONMENT}\ob_secrets`
     }
   }
 }
+```
+
+
+### Helpful hints for working with encrypted data bag items
+
+* If you need to make an encrypted data bag secret you can easily create one with a command similar to this
+
+```
+openssl rand -base64 4096 | tr -d '\r\n' > .chef/encrypted_data_bag_secret
+```
+
+* If you need to create the data bag
+
+```
+knife data bag create ob_dev -z
+```
+
+* If you need to create the encrypted data bag item
+
+```
+knife data bag create ob_dev ob_secrets -z --secret-file ./.chef/encrypted_data_bag_secret
 ```
 
 
