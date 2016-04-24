@@ -59,7 +59,7 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 **Binary Deployment Type Configuration**
 
 - node`['ob']['version']`
-  - version of the binary to download.
+  - version of the binary to download
   - default is `'1.1.2'`
 
 - node`['ob']['checksum']`
