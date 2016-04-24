@@ -53,8 +53,8 @@ Node level defaults provided by the cookbook.  (for a sane default environment).
 **OpenBazaar Installation Flavor Configuration**
 
 - node`['ob']['deployment_type']`
-the type of deployment to use. possible values `'source'`, `'binary'`
-default is `'binary'`
+  - the type of deployment to use. possible values `'source'`, `'binary'`
+  - default is `'binary'`
 
 **Binary Deployment Type Configuration**
 
