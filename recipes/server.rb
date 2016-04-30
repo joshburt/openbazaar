@@ -13,12 +13,6 @@
 ## Turn off OpenBazaar Server
 ###############################################################################
 service 'openbazaard' do
-  case node['platform']
-  when 'ubuntu'
-    if node['platform_version'].to_f >= 9.10
-      provider Chef::Provider::Service::Upstart
-    end
-  end
   action :stop
 end
 
@@ -65,11 +59,5 @@ end
 ## Turn on OpenBazaar Server
 ###############################################################################
 service 'openbazaard' do
-  case node['platform']
-  when 'ubuntu'
-    if node['platform_version'].to_f >= 9.10
-      provider Chef::Provider::Service::Upstart
-    end
-  end
   action :start
 end

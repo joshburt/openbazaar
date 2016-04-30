@@ -3,6 +3,10 @@ OpenBazaar Cookbook CHANGELOG
 
 This file is used to list changes made in each version of the openbazaar cookbook.
 
+0.3.12
+------
+- removed upstart provider within service resources
+
 0.3.11
 ------
 - travis-ci integration
