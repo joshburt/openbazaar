@@ -1,6 +1,6 @@
 OpenBazaar Cookbook
 ===================
-[![Build Status](https://travis-ci.org/joshburt/openbazaar.svg?branch=master)](https://travis-ci.org/joshburt/openbazaar)
+[![Cookbook Version](https://img.shields.io/cookbook/v/openbazaar.svg)](https://supermarket.getchef.com/cookbooks/openbazaar) [![Build Status](https://travis-ci.org/joshburt/openbazaar.svg?branch=master)](https://travis-ci.org/joshburt/openbazaar)
 
 This cookbook installs, configures, and maintains the OpenBazaar server components.
 
