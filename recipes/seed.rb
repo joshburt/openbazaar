@@ -12,13 +12,8 @@
 ###############################################################################
 ## Turn off openbazaarseedd Server
 ###############################################################################
-service 'openbazaarseedd' do
-  case node['platform']
-  when 'ubuntu'
-    if node['platform_version'].to_f >= 9.10
-      provider Chef::Provider::Service::Upstart
-    end
-  end
+openbazaar_service 'stop openbazaarseedd if running' do
+  type 'openbazaarseedd'
   action :stop
 end
 
@@ -39,37 +34,17 @@ user ob_service_account do
 end
 
 ###############################################################################
-## deploy upstart config
+## register as a system service for auto start up
 ###############################################################################
-template '/etc/init/openbazaarseedd.conf' do
-  source 'openbazaarseedd.conf.erb'
-  variables(
-    user: ob_service_account,
-    group: ob_service_group,
-    chdir: ob_server_base_dir,
-    exec: ob_seed_daemon_exec_cmd
-  )
+openbazaar_service 'register as a service' do
+  type 'openbazaarseedd'
   action :create
-  notifies :run, 'execute[initctl reload-configuration]'
-  only_if { node['platform_family'] == 'debian' }
-end
-
-###############################################################################
-## for init.d reload if we changed it
-###############################################################################
-execute 'initctl reload-configuration' do
-  action :nothing
 end
 
 ###############################################################################
 ## Turn on openbazaarseedd Server
 ###############################################################################
-service 'openbazaarseedd' do
-  case node['platform']
-  when 'ubuntu'
-    if node['platform_version'].to_f >= 9.10
-      provider Chef::Provider::Service::Upstart
-    end
-  end
+openbazaar_service 'start openbazaarseedd if stopped' do
+  type 'openbazaarseedd'
   action :start
 end
