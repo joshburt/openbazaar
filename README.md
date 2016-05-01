@@ -25,9 +25,11 @@ OpenBazaar is an open source project to create a decentralized network for peer 
 Platform
 ------------
 * Tested on
+    * Debian 7 (no service manipulation support)
+    * Debian 8 (no service manipulation support)
     * Ubuntu 14.04
-    * Ubuntu 15.04 (no service manipulation)
-    * Ubuntu 16.04 (no service manipulation)
+    * Ubuntu 15.04 (no service manipulation support)
+    * Ubuntu 16.04 (no service manipulation support)
   
 Requirements
 ------------

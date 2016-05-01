@@ -3,6 +3,10 @@ OpenBazaar Cookbook CHANGELOG
 
 This file is used to list changes made in each version of the openbazaar cookbook.
 
+0.5.0
+-----
+- Initial support for Debian 7 and 8.  Partial support for CentOS
+
 0.4.2
 -----
 - added another supported platform, ubuntu 15.04

@@ -41,12 +41,12 @@ action :create do
   end
 end
 
+###############################################################################
+## Turn on service
+###############################################################################
 action :start do
   case node['platform']
   when 'ubuntu'
-    ###############################################################################
-    ## Turn on service
-    ###############################################################################
     service new_resource.type do
       if node['platform_version'].to_f <= 14.04
         provider Chef::Provider::Service::Upstart
@@ -59,12 +59,12 @@ action :start do
   end
 end
 
+###############################################################################
+## Turn off service
+###############################################################################
 action :stop do
   case node['platform']
   when 'ubuntu'
-    ###############################################################################
-    ## Turn off service
-    ###############################################################################
     service new_resource.type do
       if node['platform_version'].to_f <= 14.04
         provider Chef::Provider::Service::Upstart

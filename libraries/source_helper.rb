@@ -12,7 +12,9 @@ module OpenBazaar
       ## Generic Build Tools
       #########################################################################
       include_recipe 'build-essential'
-      package %w(pkg-config libtool) do
+      build_packages = ['libtool']
+      build_packages << 'pkg-config' if node['platform_family'] == 'debian'
+      package build_packages do
         action :install
       end
 
@@ -22,6 +24,7 @@ module OpenBazaar
       include_recipe 'openssl::upgrade'
       package %w(libssl-dev) do
         action :install
+        only_if { node['platform_family'] == 'debian' }
       end
 
       #########################################################################
