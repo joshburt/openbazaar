@@ -15,15 +15,15 @@ action :create do
       ###############################################################################
       ## deploy upstart config
       ###############################################################################
-      template "/etc/init/#{@new_resource.type}.conf" do
-        source "#{@new_resource.type}.upstart.conf.erb"
+      template "/etc/init/#{new_resource.type}.conf" do
+        source "#{new_resource.type}.upstart.conf.erb"
         variables(
           user: ob_service_account,
           group: ob_service_group,
           chdir: ob_server_base_dir,
-          exec: if @new_resource.type == 'openbazaard'
+          exec: if new_resource.type == 'openbazaard'
                   ob_server_daemon_exec_cmd
-                elsif @new_resource.type == 'openbazaarseedd'
+                elsif new_resource.type == 'openbazaarseedd'
                   ob_seed_daemon_exec_cmd
                 end
         )
@@ -47,7 +47,7 @@ action :start do
     ###############################################################################
     ## Turn on service
     ###############################################################################
-    service @new_resource.type do
+    service new_resource.type do
       provider Chef::Provider::Service::Upstart
       action :start
       only_if { node['platform_version'].to_f <= 14.04 }
@@ -61,7 +61,7 @@ action :stop do
     ###############################################################################
     ## Turn off service
     ###############################################################################
-    service @new_resource.type do
+    service new_resource.type do
       provider Chef::Provider::Service::Upstart
       action :stop
       only_if { node['platform_version'].to_f <= 14.04 }
