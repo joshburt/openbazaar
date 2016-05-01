@@ -12,7 +12,8 @@
 ###############################################################################
 ## Turn off OpenBazaar Server
 ###############################################################################
-service 'openbazaard' do
+openbazaar_service 'stop openbazaard if running' do
+  type 'openbazaard'
   action :stop
 end
 
@@ -33,31 +34,17 @@ user ob_service_account do
 end
 
 ###############################################################################
-## deploy upstart config
+## register as a system service for auto start up
 ###############################################################################
-template '/etc/init/openbazaard.conf' do
-  source 'openbazaard.conf.erb'
-  variables(
-    user: ob_service_account,
-    group: ob_service_group,
-    chdir: ob_server_base_dir,
-    exec: ob_server_daemon_exec_cmd
-  )
+openbazaar_service 'register as a service' do
+  type 'openbazaard'
   action :create
-  notifies :run, 'execute[initctl reload-configuration]'
-  only_if { node['platform_family'] == 'debian' }
-end
-
-###############################################################################
-## for init.d reload if we changed it
-###############################################################################
-execute 'initctl reload-configuration' do
-  action :nothing
 end
 
 ###############################################################################
 ## Turn on OpenBazaar Server
 ###############################################################################
-service 'openbazaard' do
+openbazaar_service 'stop openbazaard if stopped' do
+  type 'openbazaard'
   action :start
 end
