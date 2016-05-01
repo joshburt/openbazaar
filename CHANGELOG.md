@@ -3,6 +3,10 @@ OpenBazaar Cookbook CHANGELOG
 
 This file is used to list changes made in each version of the openbazaar cookbook.
 
+0.4.1
+-----
+- added some additional ubuntu > 14.04 service manipulation protection 
+
 0.4.0
 -----
 - initial support for Ubuntu 16.04 (no service manipulation yet)
