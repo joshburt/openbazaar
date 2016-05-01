@@ -9,7 +9,7 @@ version          '0.5.0'
 issues_url 'https://github.com/joshburt/openbazaar/issues'
 source_url 'https://github.com/joshburt/openbazaar'
 
-%w[ debian ubuntu ].each do |os|
+%w( debian ubuntu ).each do |os|
   supports os
 end
 

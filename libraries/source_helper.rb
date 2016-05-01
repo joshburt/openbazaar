@@ -12,7 +12,7 @@ module OpenBazaar
       ## Generic Build Tools
       #########################################################################
       include_recipe 'build-essential'
-      build_packages = [ 'libtool' ]
+      build_packages = ['libtool']
       build_packages << 'pkg-config' if node['platform_family'] == 'debian'
       package build_packages do
         action :install
