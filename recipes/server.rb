@@ -7,7 +7,6 @@
 # Dependency injection..
 ::Chef::Recipe.send(:include, OpenBazaar::ConfigHelper)
 ::Chef::Resource::User.send(:include, OpenBazaar::ConfigHelper)
-::Chef::Resource::Template.send(:include, OpenBazaar::ConfigHelper)
 
 ###############################################################################
 ## Turn off OpenBazaar Server
