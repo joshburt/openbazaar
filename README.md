@@ -26,7 +26,7 @@ Platform
 ------------
 * Tested on
     * Ubuntu 14.04
-    * Ubuntu 16.04
+    * Ubuntu 16.04 (no service manipualtion)
   
 Requirements
 ------------

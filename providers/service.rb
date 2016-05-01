@@ -48,7 +48,11 @@ action :start do
     ## Turn on service
     ###############################################################################
     service new_resource.type do
-      provider Chef::Provider::Service::Upstart
+      if node['platform_version'].to_f <= 14.04
+        provider Chef::Provider::Service::Upstart
+      else
+        provider Chef::Provider::Service::Systemd # Ubuntu moved to systemd init after 14.04
+      end
       action :start
       only_if { node['platform_version'].to_f <= 14.04 }
     end
@@ -62,7 +66,11 @@ action :stop do
     ## Turn off service
     ###############################################################################
     service new_resource.type do
-      provider Chef::Provider::Service::Upstart
+      if node['platform_version'].to_f <= 14.04
+        provider Chef::Provider::Service::Upstart
+      else
+        provider Chef::Provider::Service::Systemd # Ubuntu moved to systemd init after 14.04
+      end
       action :stop
       only_if { node['platform_version'].to_f <= 14.04 }
     end
