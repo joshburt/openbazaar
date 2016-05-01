@@ -19,6 +19,8 @@ module OpenBazaar
       case node['platform_family']
       when 'debian'
         '/usr/share/openbazaar'
+      when 'rhel'
+        '/usr/share/openbazaar'
       else
         log 'the installer does not currently support this os. good luck!'
       end
