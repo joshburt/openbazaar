@@ -18,14 +18,14 @@ action :create do
       template "/etc/init/#{@new_resource.type}.conf" do
         source "#{@new_resource.type}.upstart.conf.erb"
         variables(
-            user: ob_service_account,
-            group: ob_service_group,
-            chdir: ob_server_base_dir,
-            exec: if @new_resource.type == 'openbazaard'
-                    ob_server_daemon_exec_cmd
-                  elsif @new_resource.type == 'openbazaarseedd'
-                    ob_seed_daemon_exec_cmd
-                  end
+          user: ob_service_account,
+          group: ob_service_group,
+          chdir: ob_server_base_dir,
+          exec: if @new_resource.type == 'openbazaard'
+                  ob_server_daemon_exec_cmd
+                elsif @new_resource.type == 'openbazaarseedd'
+                  ob_seed_daemon_exec_cmd
+                end
         )
         action :create
         notifies :run, 'execute[initctl reload-configuration]'
